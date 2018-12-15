@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CFB21C563BB0005B24B /* AppDelegate.swift */; };
-		96521CFE21C563BB0005B24B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521CFD21C563BB0005B24B /* ViewController.swift */; };
 		96521D0121C563BB0005B24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96521CFF21C563BB0005B24B /* Main.storyboard */; };
 		96521D0421C563BB0005B24B /* VKClient.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96521D0221C563BB0005B24B /* VKClient.xcdatamodeld */; };
 		96521D0621C563BF0005B24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96521D0521C563BF0005B24B /* Assets.xcassets */; };
 		96521D0921C563BF0005B24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96521D0721C563BF0005B24B /* LaunchScreen.storyboard */; };
 		96521D1421C563BF0005B24B /* VKClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D1321C563BF0005B24B /* VKClientTests.swift */; };
 		96521D1F21C563C00005B24B /* VKClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D1E21C563C00005B24B /* VKClientUITests.swift */; };
+		96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D2E21C56C4C0005B24B /* LoginFormController.swift */; };
+		96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D3121C571180005B24B /* CornerRadiusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		96521CF821C563BB0005B24B /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96521CFB21C563BB0005B24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96521CFD21C563BB0005B24B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96521D0021C563BB0005B24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96521D0321C563BB0005B24B /* VKClient.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VKClient.xcdatamodel; sourceTree = "<group>"; };
 		96521D0521C563BF0005B24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		96521D1A21C563C00005B24B /* VKClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96521D1E21C563C00005B24B /* VKClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKClientUITests.swift; sourceTree = "<group>"; };
 		96521D2021C563C00005B24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96521D2E21C56C4C0005B24B /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		96521D3121C571180005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 		96521CFA21C563BB0005B24B /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
+				96521D3021C570EA0005B24B /* CustomView */,
 				96521CFB21C563BB0005B24B /* AppDelegate.swift */,
-				96521CFD21C563BB0005B24B /* ViewController.swift */,
+				96521D2E21C56C4C0005B24B /* LoginFormController.swift */,
 				96521CFF21C563BB0005B24B /* Main.storyboard */,
 				96521D0521C563BF0005B24B /* Assets.xcassets */,
 				96521D0721C563BF0005B24B /* LaunchScreen.storyboard */,
@@ -126,6 +129,14 @@
 				96521D2021C563C00005B24B /* Info.plist */,
 			);
 			path = VKClientUITests;
+			sourceTree = "<group>";
+		};
+		96521D3021C570EA0005B24B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				96521D3121C571180005B24B /* CornerRadiusButton.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96521CFE21C563BB0005B24B /* ViewController.swift in Sources */,
+				96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */,
+				96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */,
 				96521D0421C563BB0005B24B /* VKClient.xcdatamodeld in Sources */,
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
 			);
