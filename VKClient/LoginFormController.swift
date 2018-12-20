@@ -29,23 +29,18 @@ final class LoginFormController: UIViewController {
 
     }
   @objc func keyboardWasShown(notification: Notification) {
-    
-    print("Keyboard is shown")
     guard
       let info = notification.userInfo as NSDictionary?,
       let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size
       else {
         return
     }
-    
     let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
     scrollView?.contentInset = insets
     scrollView?.scrollIndicatorInsets = insets
   }
   
   @objc func keyboardWillBeHidden(notification: Notification) {
-    
-    print("Keyboard is hidden")
     let contentInsets = UIEdgeInsets.zero
     scrollView?.contentInset = contentInsets
     scrollView?.scrollIndicatorInsets = contentInsets
@@ -56,13 +51,33 @@ final class LoginFormController: UIViewController {
   }
   
   @IBAction func loginButtonPressed(_ sender: CornerRadiusButton) {
-     let userInputLogin = loginTextField.text
-     let userInputPassword = passwordTextField.text
-    
+    //segue created in storyboard
+  }
+  
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    let checkResult = checkUserData()
+    if !checkResult {
+      showLoginError()
+    }
+    return checkResult
+  }
+  
+  func checkUserData() -> Bool {
+    let userInputLogin = loginTextField.text
+    let userInputPassword = passwordTextField.text
     if (userInputLogin == hardcodedLogin && userInputPassword == hardcodedPassword) {
       print("Auth OK")
+      return true
     } else {
       print("Wrong credentials")
+      return false
     }
+  }
+  
+  func showLoginError() {
+    let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+    let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    alert.addAction(action)
+    present(alert, animated: true, completion: nil)
   }
 }
