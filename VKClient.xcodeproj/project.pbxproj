@@ -16,6 +16,13 @@
 		96521D1F21C563C00005B24B /* VKClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D1E21C563C00005B24B /* VKClientUITests.swift */; };
 		96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D2E21C56C4C0005B24B /* LoginFormController.swift */; };
 		96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D3121C571180005B24B /* CornerRadiusButton.swift */; };
+		96A79FED21D268F600320EAE /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEC21D268F600320EAE /* Friends.swift */; };
+		96A79FEF21D2690800320EAE /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEE21D2690800320EAE /* Groups.swift */; };
+		96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF021D269AC00320EAE /* ServerEmulator.swift */; };
+		96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF221D26A0B00320EAE /* NetworkClient.swift */; };
+		96A79FF721D3785800320EAE /* StorageEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF621D3785800320EAE /* StorageEmulator.swift */; };
+		96A79FF921D39D9900320EAE /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF821D39D9900320EAE /* FriendsTableViewController.swift */; };
+		96A79FFD21D3AEF300320EAE /* FriendsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		96521D2021C563C00005B24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96521D2E21C56C4C0005B24B /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		96521D3121C571180005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		96A79FEC21D268F600320EAE /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		96A79FEE21D2690800320EAE /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
+		96A79FF021D269AC00320EAE /* ServerEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEmulator.swift; sourceTree = "<group>"; };
+		96A79FF221D26A0B00320EAE /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		96A79FF621D3785800320EAE /* StorageEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageEmulator.swift; sourceTree = "<group>"; };
+		96A79FF821D39D9900320EAE /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +115,12 @@
 		96521CFA21C563BB0005B24B /* VKClient */ = {
 			isa = PBXGroup;
 			children = (
+				96A79FEB21D268D300320EAE /* Model */,
 				96521D3021C570EA0005B24B /* CustomView */,
 				96521CFB21C563BB0005B24B /* AppDelegate.swift */,
 				96521D2E21C56C4C0005B24B /* LoginFormController.swift */,
+				96A79FF821D39D9900320EAE /* FriendsTableViewController.swift */,
+				96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */,
 				96521CFF21C563BB0005B24B /* Main.storyboard */,
 				96521D0521C563BF0005B24B /* Assets.xcassets */,
 				96521D0721C563BF0005B24B /* LaunchScreen.storyboard */,
@@ -137,6 +154,18 @@
 				96521D3121C571180005B24B /* CornerRadiusButton.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		96A79FEB21D268D300320EAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96A79FEC21D268F600320EAE /* Friends.swift */,
+				96A79FEE21D2690800320EAE /* Groups.swift */,
+				96A79FF021D269AC00320EAE /* ServerEmulator.swift */,
+				96A79FF221D26A0B00320EAE /* NetworkClient.swift */,
+				96A79FF621D3785800320EAE /* StorageEmulator.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +301,15 @@
 			files = (
 				96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */,
 				96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */,
+				96A79FFD21D3AEF300320EAE /* FriendsListCell.swift in Sources */,
 				96521D0421C563BB0005B24B /* VKClient.xcdatamodeld in Sources */,
+				96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */,
+				96A79FF921D39D9900320EAE /* FriendsTableViewController.swift in Sources */,
+				96A79FF721D3785800320EAE /* StorageEmulator.swift in Sources */,
+				96A79FED21D268F600320EAE /* Friends.swift in Sources */,
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
+				96A79FEF21D2690800320EAE /* Groups.swift in Sources */,
+				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

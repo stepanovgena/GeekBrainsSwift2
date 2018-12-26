@@ -13,9 +13,10 @@ final class LoginFormController: UIViewController {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
-  
-  private let hardcodedLogin = "admin"
-  private let hardcodedPassword = "pwd"
+ 
+  private let hardcodedLogin = ""
+  private let hardcodedPassword = ""
+  private let userId = "user001"
   
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,13 @@ final class LoginFormController: UIViewController {
     
     let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
     scrollView?.addGestureRecognizer(hideKeyboardGesture)
+    
+    StorageEmulator.setUserId(userId: userId)
+   // NetworkClient.updateFriendsStorageFromServer()
+  
+      if let friendsList = ServerEmulator.getFriends(userId: userId) {
+    print(friendsList)
+      }
 
     }
   @objc func keyboardWasShown(notification: Notification) {
