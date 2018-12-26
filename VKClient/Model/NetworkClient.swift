@@ -19,7 +19,7 @@ class NetworkClient {
 //  }
   
   static func updateFriendsServerfromViewController(userChangedFriendsArray: [Friends]) {
-    ServerEmulator.updateFriends(userId: userId, updatedFriendsArray: userChangedFriendsArray)
+    ServerEmulator.updateUserFriends(userId: userId, updatedFriendsArray: userChangedFriendsArray)
   }
   
   static func updateGroupsStorageFromServer() {

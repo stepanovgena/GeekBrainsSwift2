@@ -14,7 +14,9 @@ class StorageEmulator {
   static let friendsArrayKey = "friendsArrayKey"
   
   static func setUserId(userId: String) {
+    if (userId != getUserId()) {
     UserDefaults.standard.set(userId, forKey: userIdKey)
+    }
   }
   
   static func getUserId() -> String? {

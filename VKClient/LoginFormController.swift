@@ -29,11 +29,6 @@ final class LoginFormController: UIViewController {
     scrollView?.addGestureRecognizer(hideKeyboardGesture)
     
     StorageEmulator.setUserId(userId: userId)
-   // NetworkClient.updateFriendsStorageFromServer()
-  
-      if let friendsList = ServerEmulator.getFriends(userId: userId) {
-    print(friendsList)
-      }
 
     }
   @objc func keyboardWasShown(notification: Notification) {

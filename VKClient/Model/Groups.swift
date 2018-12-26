@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Groups: Equatable {
+  let name: String
+  let avatarPath: String
+  
+  init (name: String, avatarPath: String) {
+    self.name = name
+    self.avatarPath = avatarPath
+  }
+}
