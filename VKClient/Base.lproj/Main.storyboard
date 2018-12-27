@@ -182,7 +182,7 @@
                                 <connections>
                                     <outlet property="friendsAvatar" destination="yLq-cg-GGE" id="DLi-q3-eAZ"/>
                                     <outlet property="friendsName" destination="jZb-jv-Pmr" id="K5Q-Rb-ffG"/>
-                                    <segue destination="fj5-U1-L6W" kind="show" id="V40-DS-TTW"/>
+                                    <segue destination="fj5-U1-L6W" kind="show" identifier="segueToFriendDetails" id="V40-DS-TTW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -245,6 +245,12 @@
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieg-pb-qNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Cpq-bA-jJm">
+                    <connections>
+                        <segue destination="V4Z-G3-Xnr" kind="unwind" unwindAction="unwindToFriendsWithSegue:" id="Ylr-bf-x4U"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <exit id="V4Z-G3-Xnr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4975.1999999999998" y="-417.8410794602699"/>
         </scene>

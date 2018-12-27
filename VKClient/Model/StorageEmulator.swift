@@ -31,6 +31,4 @@ class StorageEmulator {
   static func getFriendsArray() -> [Friends]? {
     return UserDefaults.standard.object(forKey: friendsArrayKey) as? [Friends]
   }
-
-  
 }

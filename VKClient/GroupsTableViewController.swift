@@ -15,16 +15,7 @@ class GroupsTableViewController: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      if let userId = StorageEmulator.getUserId() {
-        groupsArray = ServerEmulator.getUserGroups(userId: userId) ?? []
-      }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getUserGroups()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,18 +26,14 @@ class GroupsTableViewController: UITableViewController {
         return groupsArray.count
     }
 
-  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let avatarName = groupsArray[indexPath.row].avatarPath
       let avatarImage = UIImage(named: avatarName)
       let groupsName = groupsArray[indexPath.row].name
-  
       let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupsListCell
-
       cell.groupsAvatar.image = avatarImage
       cell.groupsName.text = groupsName
-
-        return cell
+      return cell
     }
   
   @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -55,56 +42,31 @@ class GroupsTableViewController: UITableViewController {
       if  let groupToAddIndexPath = allGroupsTableViewController.availableGroupsTableView.indexPathForSelectedRow {
       let groupToAdd = ServerEmulator.availableGroupsDataBase[groupToAddIndexPath.row]
         if !groupsArray.contains(groupToAdd) {
-      groupsArray.append(groupToAdd)
+          groupsArray.append(groupToAdd)
+          updateUserGroupsOnServer()
           groupsTableView.reloadData()
       }
       }
     }
     
   }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+  func getUserGroups() {
+    if let userId = StorageEmulator.getUserId() {
+      groupsArray = ServerEmulator.getUserGroups(userId: userId) ?? []
     }
-    */
-
+  }
   
-    // Override to support editing the table view.
+  func updateUserGroupsOnServer() {
+     if let userId = StorageEmulator.getUserId() {
+      ServerEmulator.updateUserGroups(userId: userId, updatedGroupsArray: groupsArray)
+    }
+  }
+  
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
           groupsArray.remove(at: indexPath.row)
           tableView.deleteRows(at: [indexPath], with: .fade)
+          updateUserGroupsOnServer()
         }
     }
-  
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

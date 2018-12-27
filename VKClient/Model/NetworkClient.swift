@@ -29,6 +29,4 @@ class NetworkClient {
   static func updateGroupsServerfromViewController() {
     
   }
-  
-  
 }

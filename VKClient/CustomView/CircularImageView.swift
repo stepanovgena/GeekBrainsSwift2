@@ -9,7 +9,8 @@
 import Foundation
 
 import UIKit
-
+//Doesn't work yet
+//TODO: fix
 @IBDesignable class CircularImageView: UIImageView {
   
   @IBInspectable var cornerRadius: CGFloat {
