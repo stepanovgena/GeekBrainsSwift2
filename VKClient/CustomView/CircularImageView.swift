@@ -9,11 +9,10 @@
 import Foundation
 
 import UIKit
-//Doesn't work yet
-//TODO: fix
+
 @IBDesignable class CircularImageView: UIImageView {
   
-  @IBInspectable var cornerRadius: CGFloat {
+   var cornerRadius: CGFloat {
     return frame.width/2
   }
   
@@ -32,10 +31,10 @@ import UIKit
   }
   
   func sharedInit() {
-    refreshCorners(value: cornerRadius)
+    setCornerRadius(value: cornerRadius)
   }
   
-  func refreshCorners(value: CGFloat) {
+  func setCornerRadius(value: CGFloat) {
     layer.cornerRadius = value
   }
 }

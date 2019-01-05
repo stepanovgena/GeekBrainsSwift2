@@ -16,6 +16,7 @@
 		96521D1F21C563C00005B24B /* VKClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D1E21C563C00005B24B /* VKClientUITests.swift */; };
 		96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D2E21C56C4C0005B24B /* LoginFormController.swift */; };
 		96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D3121C571180005B24B /* CornerRadiusButton.swift */; };
+		966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989E821E0EAA9006795A2 /* CircularShadowView.swift */; };
 		96A79FED21D268F600320EAE /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEC21D268F600320EAE /* Friends.swift */; };
 		96A79FEF21D2690800320EAE /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEE21D2690800320EAE /* Groups.swift */; };
 		96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF021D269AC00320EAE /* ServerEmulator.swift */; };
@@ -64,6 +65,7 @@
 		96521D2021C563C00005B24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96521D2E21C56C4C0005B24B /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		96521D3121C571180005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		966989E821E0EAA9006795A2 /* CircularShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularShadowView.swift; sourceTree = "<group>"; };
 		96A79FEC21D268F600320EAE /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		96A79FEE21D2690800320EAE /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		96A79FF021D269AC00320EAE /* ServerEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEmulator.swift; sourceTree = "<group>"; };
@@ -129,15 +131,8 @@
 			children = (
 				96A79FEB21D268D300320EAE /* Model */,
 				96521D3021C570EA0005B24B /* CustomView */,
+				966989E721E0E2C4006795A2 /* ViewControllers */,
 				96521CFB21C563BB0005B24B /* AppDelegate.swift */,
-				96521D2E21C56C4C0005B24B /* LoginFormController.swift */,
-				96A79FF821D39D9900320EAE /* FriendsTableViewController.swift */,
-				96A79FFE21D3C47E00320EAE /* GroupsTableViewController.swift */,
-				96A7A00421D401E400320EAE /* AllGroupsTableViewController.swift */,
-				96FE3EAA21D42C6D0072A9D8 /* FriendsCollectionViewController.swift */,
-				96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */,
-				96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */,
-				96A7A00021D3D05400320EAE /* GroupsListCell.swift */,
 				96521CFF21C563BB0005B24B /* Main.storyboard */,
 				96521D0521C563BF0005B24B /* Assets.xcassets */,
 				96521D0721C563BF0005B24B /* LaunchScreen.storyboard */,
@@ -170,8 +165,24 @@
 			children = (
 				96521D3121C571180005B24B /* CornerRadiusButton.swift */,
 				96A7A00221D3DB2900320EAE /* CircularImageView.swift */,
+				966989E821E0EAA9006795A2 /* CircularShadowView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		966989E721E0E2C4006795A2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				96521D2E21C56C4C0005B24B /* LoginFormController.swift */,
+				96A79FF821D39D9900320EAE /* FriendsTableViewController.swift */,
+				96A79FFE21D3C47E00320EAE /* GroupsTableViewController.swift */,
+				96A7A00421D401E400320EAE /* AllGroupsTableViewController.swift */,
+				96FE3EAA21D42C6D0072A9D8 /* FriendsCollectionViewController.swift */,
+				96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */,
+				96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */,
+				96A7A00021D3D05400320EAE /* GroupsListCell.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		96A79FEB21D268D300320EAE /* Model */ = {
@@ -334,6 +345,7 @@
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
 				96A79FEF21D2690800320EAE /* Groups.swift in Sources */,
 				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
+				966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

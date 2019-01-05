@@ -149,17 +149,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLq-cg-GGE">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEm-fS-F4L" userLabel="Shadow" customClass="CircularShadowView" customModule="VKClient" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="20.5" width="44" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="U8x-p9-kmQ"/>
+                                                <constraint firstAttribute="width" constant="44" id="aw8-as-ibU"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="0.0" height="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLq-cg-GGE" customClass="CircularImageView" customModule="VKClient" customModuleProvider="target">
                                             <rect key="frame" x="16" y="20.5" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="56c-XB-uD7"/>
                                                 <constraint firstAttribute="width" constant="44" id="t6P-Yd-CER"/>
                                             </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="22"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-jv-Pmr">
                                             <rect key="frame" x="92" y="20.5" width="82" height="44"/>
@@ -171,8 +188,12 @@
                                     <constraints>
                                         <constraint firstItem="jZb-jv-Pmr" firstAttribute="leading" secondItem="yLq-cg-GGE" secondAttribute="trailing" constant="32" id="1qf-Nx-eLc"/>
                                         <constraint firstAttribute="bottom" secondItem="yLq-cg-GGE" secondAttribute="bottom" constant="20" symbolic="YES" id="2z5-uB-l6K"/>
+                                        <constraint firstItem="uEm-fS-F4L" firstAttribute="leading" secondItem="RA3-Yq-vFc" secondAttribute="leading" constant="16" id="4Pr-UP-aGd"/>
+                                        <constraint firstAttribute="bottom" secondItem="uEm-fS-F4L" secondAttribute="bottom" constant="20" symbolic="YES" id="Tl8-ne-vJG"/>
                                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jZb-jv-Pmr" secondAttribute="trailing" constant="201" id="UKS-aG-HKs"/>
                                         <constraint firstItem="jZb-jv-Pmr" firstAttribute="centerY" secondItem="yLq-cg-GGE" secondAttribute="centerY" id="WTI-R3-JsB"/>
+                                        <constraint firstItem="jZb-jv-Pmr" firstAttribute="leading" secondItem="uEm-fS-F4L" secondAttribute="trailing" constant="32" id="Wh3-TA-dE6"/>
+                                        <constraint firstItem="uEm-fS-F4L" firstAttribute="top" secondItem="RA3-Yq-vFc" secondAttribute="top" constant="20" symbolic="YES" id="XRi-9d-Nk6"/>
                                         <constraint firstItem="yLq-cg-GGE" firstAttribute="leading" secondItem="RA3-Yq-vFc" secondAttribute="leading" constant="16" id="Zx9-Ss-JBQ"/>
                                         <constraint firstAttribute="bottom" secondItem="jZb-jv-Pmr" secondAttribute="bottom" constant="20" symbolic="YES" id="c3R-yI-idb"/>
                                         <constraint firstItem="yLq-cg-GGE" firstAttribute="top" secondItem="RA3-Yq-vFc" secondAttribute="top" constant="20" symbolic="YES" id="iYl-Ih-NQh"/>
@@ -223,6 +244,7 @@
                                             <rect key="frame" x="0.0" y="9" width="151" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="R1t-9A-My6"/>
+                                                <constraint firstAttribute="width" secondItem="x93-sR-3iE" secondAttribute="height" multiplier="151:150" id="Y3M-ok-DUo"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -270,7 +292,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-74-OMe">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMF-ZW-Uyj" userLabel="Shadow" customClass="CircularShadowView" customModule="VKClient" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="20" width="44" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="8fA-wY-snZ"/>
+                                                <constraint firstAttribute="width" constant="44" id="aA0-Ee-a5V"/>
+                                            </constraints>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-74-OMe" customClass="CircularImageView" customModule="VKClient" customModuleProvider="target">
                                             <rect key="frame" x="16" y="20" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="q9d-b2-fi7"/>
@@ -290,9 +320,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="gMF-ZW-Uyj" firstAttribute="top" secondItem="KWO-IK-aCk" secondAttribute="top" constant="20" symbolic="YES" id="C5D-lr-Wfw"/>
                                         <constraint firstItem="sxU-GZ-i5u" firstAttribute="centerY" secondItem="UXS-74-OMe" secondAttribute="centerY" id="HJS-o7-eul"/>
                                         <constraint firstItem="sxU-GZ-i5u" firstAttribute="top" secondItem="KWO-IK-aCk" secondAttribute="top" constant="20" symbolic="YES" id="SiS-FR-ATb"/>
+                                        <constraint firstItem="gMF-ZW-Uyj" firstAttribute="leading" secondItem="KWO-IK-aCk" secondAttribute="leading" constant="16" id="Szq-iX-4fd"/>
+                                        <constraint firstAttribute="bottom" secondItem="gMF-ZW-Uyj" secondAttribute="bottom" constant="20" symbolic="YES" id="Ttk-MH-pqZ"/>
                                         <constraint firstItem="UXS-74-OMe" firstAttribute="leading" secondItem="KWO-IK-aCk" secondAttribute="leading" constant="16" id="VQ6-J0-yA1"/>
+                                        <constraint firstItem="sxU-GZ-i5u" firstAttribute="leading" secondItem="gMF-ZW-Uyj" secondAttribute="trailing" constant="32" id="YLt-6B-zvh"/>
                                         <constraint firstItem="sxU-GZ-i5u" firstAttribute="leading" secondItem="UXS-74-OMe" secondAttribute="trailing" constant="32" id="fQa-7A-1Fw"/>
                                         <constraint firstAttribute="bottom" secondItem="sxU-GZ-i5u" secondAttribute="bottom" constant="20" symbolic="YES" id="oPm-Ex-T7j"/>
                                         <constraint firstAttribute="bottom" secondItem="UXS-74-OMe" secondAttribute="bottom" constant="20" symbolic="YES" id="vCJ-uy-43B"/>
@@ -343,7 +377,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-9s-7Z9">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbj-ri-qmb" userLabel="Shadow" customClass="CircularShadowView" customModule="VKClient" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="20" width="44" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="Aog-ki-8bq"/>
+                                                <constraint firstAttribute="width" constant="44" id="R3T-mo-rqJ"/>
+                                            </constraints>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-9s-7Z9" customClass="CircularImageView" customModule="VKClient" customModuleProvider="target">
                                             <rect key="frame" x="16" y="20" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="1I0-L8-HhH"/>
@@ -364,12 +406,15 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ob9-9s-7Z9" firstAttribute="leading" secondItem="2fh-6m-WZz" secondAttribute="leading" constant="16" id="3fm-2h-yaH"/>
+                                        <constraint firstItem="Xbj-ri-qmb" firstAttribute="leading" secondItem="2fh-6m-WZz" secondAttribute="leading" constant="16" id="AY0-hm-hzV"/>
                                         <constraint firstItem="ob9-9s-7Z9" firstAttribute="top" secondItem="2fh-6m-WZz" secondAttribute="top" constant="20" symbolic="YES" id="CiY-oM-kcP"/>
                                         <constraint firstAttribute="bottom" secondItem="ob9-9s-7Z9" secondAttribute="bottom" constant="20" symbolic="YES" id="GKh-Q5-I2E"/>
                                         <constraint firstItem="tY2-9k-U61" firstAttribute="leading" secondItem="ob9-9s-7Z9" secondAttribute="trailing" constant="32" id="MJO-Ga-vnf"/>
                                         <constraint firstAttribute="bottom" secondItem="tY2-9k-U61" secondAttribute="bottom" constant="20" symbolic="YES" id="Sgi-d8-yvd"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xbj-ri-qmb" secondAttribute="bottom" constant="20" symbolic="YES" id="UMh-8X-xc1"/>
                                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="tY2-9k-U61" secondAttribute="trailing" constant="241" id="cr1-tO-kal"/>
                                         <constraint firstItem="tY2-9k-U61" firstAttribute="top" secondItem="2fh-6m-WZz" secondAttribute="top" constant="20" symbolic="YES" id="hqS-x7-hjy"/>
+                                        <constraint firstItem="Xbj-ri-qmb" firstAttribute="top" secondItem="2fh-6m-WZz" secondAttribute="top" constant="20" symbolic="YES" id="jHD-uN-oFj"/>
                                         <constraint firstItem="tY2-9k-U61" firstAttribute="centerY" secondItem="ob9-9s-7Z9" secondAttribute="centerY" id="nPj-I4-w55"/>
                                     </constraints>
                                 </tableViewCellContentView>
