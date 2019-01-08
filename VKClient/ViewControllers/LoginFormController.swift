@@ -13,7 +13,8 @@ final class LoginFormController: UIViewController {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
- 
+  
+  
   private let hardcodedLogin = ""
   private let hardcodedPassword = ""
   private let userId = "user001"
@@ -29,8 +30,8 @@ final class LoginFormController: UIViewController {
     scrollView?.addGestureRecognizer(hideKeyboardGesture)
     
     StorageEmulator.setUserId(userId: userId)
-
     }
+  
   @objc func keyboardWasShown(notification: Notification) {
     guard
       let info = notification.userInfo as NSDictionary?,

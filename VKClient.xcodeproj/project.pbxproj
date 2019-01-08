@@ -17,6 +17,9 @@
 		96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D2E21C56C4C0005B24B /* LoginFormController.swift */; };
 		96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D3121C571180005B24B /* CornerRadiusButton.swift */; };
 		966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989E821E0EAA9006795A2 /* CircularShadowView.swift */; };
+		966989EB21E36CCD006795A2 /* CustomViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */; };
+		966989ED21E36DBB006795A2 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EC21E36DBB006795A2 /* HeartButton.swift */; };
+		966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EE21E49FBB006795A2 /* LikeControl.swift */; };
 		96A79FED21D268F600320EAE /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEC21D268F600320EAE /* Friends.swift */; };
 		96A79FEF21D2690800320EAE /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEE21D2690800320EAE /* Groups.swift */; };
 		96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF021D269AC00320EAE /* ServerEmulator.swift */; };
@@ -66,6 +69,9 @@
 		96521D2E21C56C4C0005B24B /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		96521D3121C571180005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 		966989E821E0EAA9006795A2 /* CircularShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularShadowView.swift; sourceTree = "<group>"; };
+		966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewExtensions.swift; sourceTree = "<group>"; };
+		966989EC21E36DBB006795A2 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		966989EE21E49FBB006795A2 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		96A79FEC21D268F600320EAE /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		96A79FEE21D2690800320EAE /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		96A79FF021D269AC00320EAE /* ServerEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEmulator.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				96521D3121C571180005B24B /* CornerRadiusButton.swift */,
 				96A7A00221D3DB2900320EAE /* CircularImageView.swift */,
 				966989E821E0EAA9006795A2 /* CircularShadowView.swift */,
+				966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */,
+				966989EC21E36DBB006795A2 /* HeartButton.swift */,
+				966989EE21E49FBB006795A2 /* LikeControl.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -339,9 +348,12 @@
 				96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */,
 				96A79FFF21D3C47E00320EAE /* GroupsTableViewController.swift in Sources */,
 				96A79FF921D39D9900320EAE /* FriendsTableViewController.swift in Sources */,
+				966989EB21E36CCD006795A2 /* CustomViewExtensions.swift in Sources */,
 				96A79FF721D3785800320EAE /* StorageEmulator.swift in Sources */,
 				96A7A00321D3DB2900320EAE /* CircularImageView.swift in Sources */,
 				96A79FED21D268F600320EAE /* Friends.swift in Sources */,
+				966989ED21E36DBB006795A2 /* HeartButton.swift in Sources */,
+				966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */,
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
 				96A79FEF21D2690800320EAE /* Groups.swift in Sources */,
 				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
