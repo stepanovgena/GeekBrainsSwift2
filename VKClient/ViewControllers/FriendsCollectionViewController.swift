@@ -8,7 +8,8 @@
 
 import UIKit
 
-class FriendsCollectionViewController: UICollectionViewController {
+class FriendsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+ 
   
   private let reuseIdentifier = "friendsImageReusableCollectionCell"
   var friendImageToDisplayPath = ""
@@ -18,19 +19,27 @@ class FriendsCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let image = UIImage(named: friendImageToDisplayPath)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendsCollectionViewCell
         // Configure the cell
         cell.friendsImageView.image = image
+        cell.likeControl.updateLikesCount(likes: 77)
+      cell.likeControl.incrementLikesCount()
+      
+      
+      
         return cell
     }
+  
+  
+  
 }

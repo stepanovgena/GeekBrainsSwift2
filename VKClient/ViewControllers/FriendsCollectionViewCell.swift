@@ -12,4 +12,8 @@ class FriendsCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var friendsImageView: UIImageView!
   
+  @IBOutlet weak var likeControl: LikeControl!
+  
+  
+
 }
