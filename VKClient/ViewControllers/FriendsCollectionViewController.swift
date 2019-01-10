@@ -31,7 +31,6 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FriendsCollectionViewCell
         // Configure the cell
         cell.friendsImageView.image = image
-     
         return cell
     }
 }

@@ -29,22 +29,17 @@ import UIKit
   private func setupView() {
 
     likesLabel.text = "\(likesCount)"
-//debug
+    //MARK: Help needed, doesn't seem to do anything
+    setupConstraints()
+   
+    //MARK: to debug LikeControl position uncomment two lines below
 //  likeButton.layer.borderWidth = 1.0
 //  likesLabel.layer.borderWidth = 1.0
+    
     stackView = UIStackView(arrangedSubviews: [likeButton, likesLabel])
-    let likeButtonWidthContraints =  NSLayoutConstraint(item: likeButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 22)
-    NSLayoutConstraint.activate([likeButtonWidthContraints])
-    let likeButtonHeightContraints =  NSLayoutConstraint(item: likeButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 22)
-    NSLayoutConstraint.activate([likeButtonWidthContraints, likeButtonHeightContraints])
-    let likeElementsEqualHeightContraints =  NSLayoutConstraint(item: likesLabel, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: likeButton, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0.0)
-    NSLayoutConstraint.activate([likeButtonWidthContraints, likeButtonHeightContraints, likeElementsEqualHeightContraints])
-    
     self.addSubview(stackView)
-    stackView.spacing = 2
     stackView.distribution = .fillProportionally
-    stackView.alignment = .fill
-    
+  
     addGestureRecognizer(tapGestureRecognizer)
   }
   
@@ -52,6 +47,16 @@ import UIKit
     super.layoutSubviews()
     stackView.frame = bounds
   }
+  
+  func setupConstraints() {
+    let width: CGFloat = 22
+    let height: CGFloat = 22
+    
+    likeButton.widthAnchor.constraint(equalToConstant: width)
+    likeButton.heightAnchor.constraint(equalToConstant: height)
+    likesLabel.heightAnchor.constraint(equalTo: likeButton.heightAnchor, multiplier: 1)
+  }
+  
   
   func incrementLikesCount() {
     likesCount += 1
@@ -90,7 +95,7 @@ import UIKit
     return recognizer
   }()
   
-  //Help needed: tap works only with UILabel item of the stackView
+  //MARK: Help needed: tap works only with UILabel item of the stackView
   @objc func onTap(_ sender: HeartButton) {
     like()
   }
