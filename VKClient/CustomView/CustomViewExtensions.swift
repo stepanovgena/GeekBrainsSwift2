@@ -20,10 +20,7 @@ extension UIBezierPath {
     
     //Left Hand Curve
     self.addArc(withCenter: CGPoint(x: rectHeight * 0.3, y: rectHeight * 0.35), radius: arcRadius, startAngle: 135.degreesToRadians, endAngle: 315.degreesToRadians, clockwise: true)
-    
-    //Top Centre Dip
-   // self.addLine(to: CGPoint(x: rect.width * 0.5, y: rect.height * 0.95))
-    
+        
     //Right Hand Curve
     self.addArc(withCenter: CGPoint(x: rectHeight * 0.7, y: rectHeight * 0.35), radius: arcRadius, startAngle: 225.degreesToRadians, endAngle: 45.degreesToRadians, clockwise: true)
     

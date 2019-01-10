@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 @IBDesignable class LikeControl: UIControl {
-   var stackView: UIStackView!
-   var likeButton = HeartButton()
-  let likesLabel = UILabel()
-  var likesCount: Int = 0
+  private var stackView: UIStackView!
+  private var likeButton = HeartButton()
+  private let likesLabel = UILabel()
+  private var likesCount: Int = 0
+  private var liked: Bool = false
 
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     self.setupView()
@@ -27,19 +27,20 @@ import UIKit
   }
 
   private func setupView() {
-    
+
     likesLabel.text = "\(likesCount)"
-    //debug
-//    likeButton.layer.borderWidth = 1.0
-//    likesLabel.layer.borderWidth = 1.0
+//debug
+//  likeButton.layer.borderWidth = 1.0
+//  likesLabel.layer.borderWidth = 1.0
     stackView = UIStackView(arrangedSubviews: [likeButton, likesLabel])
     let likeButtonWidthContraints =  NSLayoutConstraint(item: likeButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 22)
     NSLayoutConstraint.activate([likeButtonWidthContraints])
     let likeButtonHeightContraints =  NSLayoutConstraint(item: likeButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 22)
     NSLayoutConstraint.activate([likeButtonWidthContraints, likeButtonHeightContraints])
+    let likeElementsEqualHeightContraints =  NSLayoutConstraint(item: likesLabel, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: likeButton, attribute: NSLayoutConstraint.Attribute.height, multiplier: 1, constant: 0.0)
+    NSLayoutConstraint.activate([likeButtonWidthContraints, likeButtonHeightContraints, likeElementsEqualHeightContraints])
     
     self.addSubview(stackView)
-    
     stackView.spacing = 2
     stackView.distribution = .fillProportionally
     stackView.alignment = .fill
@@ -49,8 +50,7 @@ import UIKit
   
   override func layoutSubviews() {
     super.layoutSubviews()
-   stackView.frame = bounds
-    
+    stackView.frame = bounds
   }
   
   func incrementLikesCount() {
@@ -68,24 +68,30 @@ import UIKit
     likesLabel.text = "\(likesCount)"
   }
   
-//  @objc override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//    incrementLikesCount()
-//  }
-//  @objc override func target(forAction action: Selector, withSender sender: Any?) -> Any? {
-//    <#code#>
-//  }
+  func like() {
+    if !liked {
+    likeButton.liked = true
+    likeButton.setNeedsDisplay()
+    incrementLikesCount()
+    liked = true
+    } else {
+      likeButton.liked = false
+      likeButton.setNeedsDisplay()
+      decrementLikesCount()
+      liked = false
+    }
+  }
   
   lazy var tapGestureRecognizer: UITapGestureRecognizer = {
     let recognizer = UITapGestureRecognizer(target: self,
-                                            action: #selector(onTap))
-    recognizer.numberOfTapsRequired = 1    // Количество нажатий, необходимое для распознавания
-    recognizer.numberOfTouchesRequired = 1 // Количество пальцев, которые должны коснуться экрана для распознавания
+                                            action: #selector(onTap(_:)))
+    recognizer.numberOfTapsRequired = 1
+    recognizer.numberOfTouchesRequired = 1
     return recognizer
-    
   }()
   
-  @objc func onTap() {
-    incrementLikesCount()
+  //Help needed: tap works only with UILabel item of the stackView
+  @objc func onTap(_ sender: HeartButton) {
+    like()
   }
-  
 }

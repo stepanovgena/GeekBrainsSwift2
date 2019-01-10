@@ -21,6 +21,7 @@ import UIKit
     let bezierPath = UIBezierPath(heartHeight: self.bounds.height)
     
     if !liked {
+      strokeColor = UIColor.gray
       self.strokeColor.setStroke()
       self.filled = false
     } else {
