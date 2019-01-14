@@ -19,9 +19,9 @@ class FriendsTableViewController: UITableViewController {
         super.viewDidLoad()
         getFriends()
         //create ordered first-letter array of friends name obtained from server
-        friendsIndex = SectionIndexCreator.createOrderedIndexArray(array: friendsArray)
+        friendsIndex = SectionIndexManager.getOrderedIndexArray(array: friendsArray)
         //create a dictionary to map names starting from the same letter to one index
-        friendsIndexDictionary = SectionIndexCreator.createFriendIndexDictionary(array: friendsArray)
+        friendsIndexDictionary = SectionIndexManager.getFriendIndexDictionary(array: friendsArray)
     }
   //MARK: Setup tableView
     override func numberOfSections(in tableView: UITableView) -> Int {

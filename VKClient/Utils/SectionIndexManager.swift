@@ -8,9 +8,9 @@
 
 import Foundation
 
-class SectionIndexCreator {
+class SectionIndexManager {
   
-  static func createOrderedIndexArray(array: [Friends]) -> [Character] {
+  static func getOrderedIndexArray(array: [Friends]) -> [Character] {
     var indexArray: [Character] = []
     var indexSet = Set<Character>()
     for item in array {
@@ -24,21 +24,17 @@ class SectionIndexCreator {
     return indexArray
   }
   
-  static func createFriendIndexDictionary(array: [Friends]) -> [Character: [Friends]] {
+  static func getFriendIndexDictionary(array: [Friends]) -> [Character: [Friends]] {
     var friendIndexDictionary: [Character: [Friends]] = [:]
     
     for item in array {
       let firstLetter = item.name[0]
-      var dummyArray: [Friends] = []
      if (friendIndexDictionary.keys.contains(firstLetter)) {
          friendIndexDictionary[firstLetter]?.append(item)
      } else {
-      dummyArray.append(item)
-      friendIndexDictionary[firstLetter] = dummyArray
-      dummyArray.removeAll()
+      friendIndexDictionary[firstLetter] = [item]
       }
     }
     return friendIndexDictionary
   }
-  
 }
