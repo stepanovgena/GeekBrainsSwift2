@@ -27,19 +27,17 @@ import UIKit
   }
 
   private func setupView() {
-
+    likeButton.isUserInteractionEnabled = false
     likesLabel.text = "\(likesCount)"
-    //MARK: Help needed, doesn't seem to do anything
     setupConstraints()
    
     //MARK: to debug LikeControl position uncomment two lines below
-//  likeButton.layer.borderWidth = 1.0
-//  likesLabel.layer.borderWidth = 1.0
+//    likeButton.layer.borderWidth = 1.0
+//    likesLabel.layer.borderWidth = 1.0
     
     stackView = UIStackView(arrangedSubviews: [likeButton, likesLabel])
     self.addSubview(stackView)
     stackView.distribution = .fillProportionally
-  
     addGestureRecognizer(tapGestureRecognizer)
   }
   
@@ -49,14 +47,8 @@ import UIKit
   }
   
   func setupConstraints() {
-    let width: CGFloat = 22
-    let height: CGFloat = 22
-    
-    likeButton.widthAnchor.constraint(equalToConstant: width)
-    likeButton.heightAnchor.constraint(equalToConstant: height)
     likesLabel.heightAnchor.constraint(equalTo: likeButton.heightAnchor, multiplier: 1)
   }
-  
   
   func incrementLikesCount() {
     likesCount += 1
@@ -90,12 +82,11 @@ import UIKit
   lazy var tapGestureRecognizer: UITapGestureRecognizer = {
     let recognizer = UITapGestureRecognizer(target: self,
                                             action: #selector(onTap(_:)))
-    recognizer.numberOfTapsRequired = 2
+    recognizer.numberOfTapsRequired = 1
     recognizer.numberOfTouchesRequired = 1
     return recognizer
   }()
   
-  //MARK: Help needed: tap works only with UILabel item of the stackView
   @objc func onTap(_ sender: HeartButton) {
     like()
   }

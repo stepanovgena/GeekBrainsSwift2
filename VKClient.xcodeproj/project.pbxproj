@@ -140,6 +140,7 @@
 				96A79FEB21D268D300320EAE /* Model */,
 				96521D3021C570EA0005B24B /* CustomView */,
 				966989E721E0E2C4006795A2 /* ViewControllers */,
+				966989F221ECC1FA006795A2 /* Utils */,
 				96521CFB21C563BB0005B24B /* AppDelegate.swift */,
 				96521CFF21C563BB0005B24B /* Main.storyboard */,
 				96521D0521C563BF0005B24B /* Assets.xcassets */,
@@ -192,7 +193,6 @@
 				96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */,
 				96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */,
 				96A7A00021D3D05400320EAE /* GroupsListCell.swift */,
-				966989F221ECC1FA006795A2 /* Utils */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
