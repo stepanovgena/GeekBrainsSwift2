@@ -90,7 +90,7 @@ import UIKit
   lazy var tapGestureRecognizer: UITapGestureRecognizer = {
     let recognizer = UITapGestureRecognizer(target: self,
                                             action: #selector(onTap(_:)))
-    recognizer.numberOfTapsRequired = 1
+    recognizer.numberOfTapsRequired = 2
     recognizer.numberOfTouchesRequired = 1
     return recognizer
   }()
