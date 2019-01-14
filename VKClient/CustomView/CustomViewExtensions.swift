@@ -36,3 +36,9 @@ extension Int {
   var degreesToRadians: CGFloat { return CGFloat(self) * .pi / 180 }
 }
 
+extension String {
+  subscript (i: Int) -> Character {
+    return self[index(startIndex, offsetBy: i)]
+  }
+}
+
