@@ -14,8 +14,6 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
   var filteredFriendsArray: [Friends] = []
   var friendsIndex: [Character] = []
   var friendsIndexDictionary: [Character: [Friends]] = [:]
-  var friendsNames:[String] = []
-  var filteredFriendsNames:[String] = []
   var searchActive = false
   
   @IBOutlet weak var friendsSearchBar: UISearchBar!
@@ -23,9 +21,9 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         getFriends()
-        getFriendsNamesArrayToSearch()
+        //set initial state of tableViewdataSource to data reseived from the server
         filteredFriendsArray = friendsArray
-        //create ordered first-letter array of friends name obtained from server
+        //create ordered first-letter array
         updateFriendsIndex(friends: filteredFriendsArray)
         //create a dictionary to map names starting from the same letter to one index
         updateFriendsNamesDictionary(friends: filteredFriendsArray)
@@ -82,14 +80,16 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
   }
 
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    
+    //keep only names matching searchBar input
     filteredFriendsArray = friendsArray.filter({ (friend) -> Bool in
       friend.name.contains(searchText)
     })
+    //update datasource for tableView
     updateFriendsIndex(friends: filteredFriendsArray)
     updateFriendsNamesDictionary(friends: filteredFriendsArray)
 
     if (searchText.count == 0) {
+      //restore initial state of data received from server
       updateFriendsIndex(friends: friendsArray)
       updateFriendsNamesDictionary(friends: friendsArray)
       searchActive = false
@@ -97,16 +97,17 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     }
     tableView.reloadData()
   }
+  
+  @objc func hideKeyboard() {
+    searchActive = false
+    friendsSearchBar.endEditing(true)
+  }
 
   //MARK: Prepare datasource
   func getFriends() {
     if let userId = StorageEmulator.getUserId() {
       friendsArray = ServerEmulator.getFriends(userId: userId) ?? []
     }
-  }
-  
-  func getFriendsNamesArrayToSearch() {
-    friendsNames = friendsArray.map {$0.name}
   }
   
   func updateFriendsNamesDictionary(friends: [Friends]) {
@@ -130,11 +131,6 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         }
       }
     }
-  
-  @objc func hideKeyboard() {
-    searchActive = false
-    friendsSearchBar.endEditing(true)
-  }
   
   @IBAction func unwindToFriends(unwindSegue: UIStoryboardSegue) {
     
