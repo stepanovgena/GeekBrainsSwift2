@@ -51,7 +51,7 @@ final class LoginFormController: UIViewController {
   }
   
   @objc func hideKeyboard() {
-    self.scrollView?.endEditing(true)
+    scrollView?.endEditing(true)
   }
   
   @IBAction func loginButtonPressed(_ sender: CornerRadiusButton) {

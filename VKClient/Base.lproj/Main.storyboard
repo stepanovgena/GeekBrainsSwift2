@@ -141,9 +141,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="pHB-OZ-gqp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vhQ-Z3-5xO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="8av-5f-0G4" id="cBz-cF-Mv3"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="vhQ-Z3-5xO" firstAttribute="leading" secondItem="pHB-OZ-gqp" secondAttribute="leading" id="A6M-JZ-MBH"/>
+                                <constraint firstAttribute="bottom" secondItem="vhQ-Z3-5xO" secondAttribute="bottom" id="Szc-Kj-8eq"/>
+                                <constraint firstAttribute="trailing" secondItem="vhQ-Z3-5xO" secondAttribute="trailing" id="i1M-ZM-o4g"/>
+                                <constraint firstItem="vhQ-Z3-5xO" firstAttribute="top" secondItem="pHB-OZ-gqp" secondAttribute="top" id="tXT-Zs-Vua"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="84" id="GlL-2k-kWX" customClass="FriendsListCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GlL-2k-kWX" id="RA3-Yq-vFc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
@@ -213,6 +233,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Мои друзья" id="txi-Qm-KKJ"/>
+                    <connections>
+                        <outlet property="friendsSearchBar" destination="vhQ-Z3-5xO" id="Vbd-uL-dit"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzW-SB-AI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

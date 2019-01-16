@@ -32,6 +32,9 @@ class ServerEmulator {
   static var friendRoman = Friends(name: "Роман", avatarPath: "defaultAvatar.png")
   static var friendSergey = Friends(name: "Сергей", avatarPath: "defaultAvatar.png")
   static var friendTimofey = Friends(name: "Тимофей", avatarPath: "defaultAvatar.png")
+  static var friendAdmiralAcbar = Friends(name: "Адмирал Акбар", avatarPath: "admiralAcbarAvatar.png")
+  static var friendAlibaba = Friends(name: "Алибаба", avatarPath: "alibabaAvatar.png")
+  static var friendAlisaSelezneva = Friends(name: "Алиса Селезнева", avatarPath: "alisaSeleznevaAvatar.png")
   
   
   //emulating a few entries for the Server-side groups database
@@ -65,7 +68,10 @@ class ServerEmulator {
     friendPetr,
     friendRoman,
     friendSergey,
-    friendTimofey
+    friendTimofey,
+    friendAdmiralAcbar,
+    friendAlibaba,
+    friendAlisaSelezneva
     ]]
   
   //set users groups 'database' as a simple dictionary
