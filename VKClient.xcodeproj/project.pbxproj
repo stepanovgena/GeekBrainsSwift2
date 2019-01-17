@@ -16,6 +16,10 @@
 		96521D1F21C563C00005B24B /* VKClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D1E21C563C00005B24B /* VKClientUITests.swift */; };
 		96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D2E21C56C4C0005B24B /* LoginFormController.swift */; };
 		96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D3121C571180005B24B /* CornerRadiusButton.swift */; };
+		9660330721F090570011886B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330621F090570011886B /* NewsTableViewController.swift */; };
+		9660330A21F0A84B0011886B /* CommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330921F0A84B0011886B /* CommentControl.swift */; };
+		9660330C21F0A85B0011886B /* ShareControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330B21F0A85B0011886B /* ShareControl.swift */; };
+		9660331021F0C77C0011886B /* ViewsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330F21F0C77C0011886B /* ViewsControl.swift */; };
 		966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989E821E0EAA9006795A2 /* CircularShadowView.swift */; };
 		966989EB21E36CCD006795A2 /* CustomViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */; };
 		966989ED21E36DBB006795A2 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EC21E36DBB006795A2 /* HeartButton.swift */; };
@@ -69,6 +73,10 @@
 		96521D2021C563C00005B24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96521D2E21C56C4C0005B24B /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		96521D3121C571180005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		9660330621F090570011886B /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		9660330921F0A84B0011886B /* CommentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentControl.swift; sourceTree = "<group>"; };
+		9660330B21F0A85B0011886B /* ShareControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareControl.swift; sourceTree = "<group>"; };
+		9660330F21F0C77C0011886B /* ViewsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsControl.swift; sourceTree = "<group>"; };
 		966989E821E0EAA9006795A2 /* CircularShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularShadowView.swift; sourceTree = "<group>"; };
 		966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewExtensions.swift; sourceTree = "<group>"; };
 		966989EC21E36DBB006795A2 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 			children = (
 				96A79FEB21D268D300320EAE /* Model */,
 				96521D3021C570EA0005B24B /* CustomView */,
+				9660330821F0A7EB0011886B /* CustomControls */,
 				966989E721E0E2C4006795A2 /* ViewControllers */,
 				966989F221ECC1FA006795A2 /* Utils */,
 				96521CFB21C563BB0005B24B /* AppDelegate.swift */,
@@ -177,9 +186,19 @@
 				966989E821E0EAA9006795A2 /* CircularShadowView.swift */,
 				966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */,
 				966989EC21E36DBB006795A2 /* HeartButton.swift */,
-				966989EE21E49FBB006795A2 /* LikeControl.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		9660330821F0A7EB0011886B /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				966989EE21E49FBB006795A2 /* LikeControl.swift */,
+				9660330921F0A84B0011886B /* CommentControl.swift */,
+				9660330B21F0A85B0011886B /* ShareControl.swift */,
+				9660330F21F0C77C0011886B /* ViewsControl.swift */,
+			);
+			path = CustomControls;
 			sourceTree = "<group>";
 		};
 		966989E721E0E2C4006795A2 /* ViewControllers */ = {
@@ -193,6 +212,7 @@
 				96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */,
 				96A79FFC21D3AEF300320EAE /* FriendsListCell.swift */,
 				96A7A00021D3D05400320EAE /* GroupsListCell.swift */,
+				9660330621F090570011886B /* NewsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -350,7 +370,9 @@
 			files = (
 				96A7A00121D3D05400320EAE /* GroupsListCell.swift in Sources */,
 				966989F421ECC23C006795A2 /* SectionIndexManager.swift in Sources */,
+				9660331021F0C77C0011886B /* ViewsControl.swift in Sources */,
 				96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */,
+				9660330A21F0A84B0011886B /* CommentControl.swift in Sources */,
 				96B5677B21D4301A00DC82DA /* FriendsCollectionViewCell.swift in Sources */,
 				96A7A00521D401E400320EAE /* AllGroupsTableViewController.swift in Sources */,
 				96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */,
@@ -358,11 +380,13 @@
 				96521D0421C563BB0005B24B /* VKClient.xcdatamodeld in Sources */,
 				96FE3EAB21D42C6D0072A9D8 /* FriendsCollectionViewController.swift in Sources */,
 				96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */,
+				9660330C21F0A85B0011886B /* ShareControl.swift in Sources */,
 				96A79FFF21D3C47E00320EAE /* GroupsTableViewController.swift in Sources */,
 				96A79FF921D39D9900320EAE /* FriendsTableViewController.swift in Sources */,
 				966989EB21E36CCD006795A2 /* CustomViewExtensions.swift in Sources */,
 				96A79FF721D3785800320EAE /* StorageEmulator.swift in Sources */,
 				96A7A00321D3DB2900320EAE /* CircularImageView.swift in Sources */,
+				9660330721F090570011886B /* NewsTableViewController.swift in Sources */,
 				96A79FED21D268F600320EAE /* Friends.swift in Sources */,
 				966989ED21E36DBB006795A2 /* HeartButton.swift in Sources */,
 				966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */,

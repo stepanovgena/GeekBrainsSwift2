@@ -13,7 +13,7 @@ import UIKit
   private var stackView: UIStackView!
   private var likeButton = HeartButton()
   private let likesLabel = UILabel()
-  private var likesCount: Int = 0
+  private var likesCount: Int = 155
   private var liked: Bool = false
 
   override init(frame: CGRect) {
@@ -29,6 +29,7 @@ import UIKit
   private func setupView() {
     likeButton.isUserInteractionEnabled = false
     likesLabel.text = "\(likesCount)"
+    likesLabel.textColor = UIColor.darkGray
     setupConstraints()
    
     //MARK: to debug LikeControl position uncomment two lines below
@@ -37,7 +38,7 @@ import UIKit
     
     stackView = UIStackView(arrangedSubviews: [likeButton, likesLabel])
     self.addSubview(stackView)
-    stackView.distribution = .fillProportionally
+    stackView.distribution = .fillEqually
     addGestureRecognizer(tapGestureRecognizer)
   }
   
