@@ -82,7 +82,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     //keep only names matching searchBar input
     filteredFriendsArray = friendsArray.filter({ (friend) -> Bool in
-      friend.name.contains(searchText)
+      friend.name.lowercased().contains(searchText.lowercased())
     })
     //update datasource for tableView
     updateFriendsIndex(friends: filteredFriendsArray)

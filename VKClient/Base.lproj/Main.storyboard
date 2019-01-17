@@ -317,9 +317,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="es3-2r-1DK">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-Pb-eC2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Iy9-Ka-KH3" id="Nco-AN-YxW"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="hTb-Pb-eC2" firstAttribute="leading" secondItem="es3-2r-1DK" secondAttribute="leading" id="Bao-WQ-gtl"/>
+                                <constraint firstAttribute="trailing" secondItem="hTb-Pb-eC2" secondAttribute="trailing" id="hST-03-rfy"/>
+                                <constraint firstItem="hTb-Pb-eC2" firstAttribute="top" secondItem="es3-2r-1DK" secondAttribute="top" id="olA-R5-uUW"/>
+                                <constraint firstAttribute="bottom" secondItem="hTb-Pb-eC2" secondAttribute="bottom" id="z4J-Vi-ouW"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="92" id="O9j-f1-Q3t" customClass="GroupsListCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O9j-f1-Q3t" id="KWO-IK-aCk">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
@@ -387,6 +407,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="groupsSearchBar" destination="hTb-Pb-eC2" id="LQ8-6h-D6z"/>
                         <outlet property="groupsTableView" destination="Sf4-Xm-3Wj" id="4Jc-se-c1B"/>
                     </connections>
                 </tableViewController>
@@ -402,9 +423,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Kb7-uG-3r5">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-rI-GY3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Aaw-O6-zho" id="JVs-1I-tMx"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="PLX-rI-GY3" secondAttribute="bottom" id="3MS-8u-Qtc"/>
+                                <constraint firstItem="PLX-rI-GY3" firstAttribute="leading" secondItem="Kb7-uG-3r5" secondAttribute="leading" id="FG6-cX-SLv"/>
+                                <constraint firstItem="PLX-rI-GY3" firstAttribute="top" secondItem="Kb7-uG-3r5" secondAttribute="top" id="dVP-fQ-TcB"/>
+                                <constraint firstAttribute="trailing" secondItem="PLX-rI-GY3" secondAttribute="trailing" id="kwB-MC-BYW"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="availableGroupsCell" rowHeight="92" id="ScX-Y7-EVt" customClass="GroupsListCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ScX-Y7-EVt" id="2fh-6m-WZz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
@@ -464,6 +505,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="allGroupsSearchBar" destination="PLX-rI-GY3" id="Q36-fJ-Gxv"/>
                         <outlet property="availableGroupsTableView" destination="14f-c5-HVA" id="HxS-CH-na7"/>
                     </connections>
                 </tableViewController>
