@@ -349,15 +349,14 @@
                                             <rect key="frame" x="16" y="20" width="44" height="44"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" secondItem="gMF-ZW-Uyj" secondAttribute="height" multiplier="1:1" id="395-ei-L7V"/>
                                                 <constraint firstAttribute="height" constant="44" id="8fA-wY-snZ"/>
-                                                <constraint firstAttribute="width" constant="44" id="aA0-Ee-a5V"/>
                                             </constraints>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-74-OMe" customClass="CircularImageView" customModule="VKClient" customModuleProvider="target">
                                             <rect key="frame" x="16" y="20" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="q9d-b2-fi7"/>
-                                                <constraint firstAttribute="width" constant="44" id="s5m-sL-wOW"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -366,7 +365,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxU-GZ-i5u">
-                                            <rect key="frame" x="92" y="20" width="42" height="44"/>
+                                            <rect key="frame" x="92" y="20" width="42" height="51.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -374,15 +373,14 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="gMF-ZW-Uyj" firstAttribute="top" secondItem="KWO-IK-aCk" secondAttribute="top" constant="20" symbolic="YES" id="C5D-lr-Wfw"/>
-                                        <constraint firstItem="sxU-GZ-i5u" firstAttribute="centerY" secondItem="UXS-74-OMe" secondAttribute="centerY" id="HJS-o7-eul"/>
                                         <constraint firstItem="sxU-GZ-i5u" firstAttribute="top" secondItem="KWO-IK-aCk" secondAttribute="top" constant="20" symbolic="YES" id="SiS-FR-ATb"/>
                                         <constraint firstItem="gMF-ZW-Uyj" firstAttribute="leading" secondItem="KWO-IK-aCk" secondAttribute="leading" constant="16" id="Szq-iX-4fd"/>
-                                        <constraint firstAttribute="bottom" secondItem="gMF-ZW-Uyj" secondAttribute="bottom" constant="20" symbolic="YES" id="Ttk-MH-pqZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="gMF-ZW-Uyj" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="Ttk-MH-pqZ"/>
                                         <constraint firstItem="UXS-74-OMe" firstAttribute="leading" secondItem="KWO-IK-aCk" secondAttribute="leading" constant="16" id="VQ6-J0-yA1"/>
                                         <constraint firstItem="sxU-GZ-i5u" firstAttribute="leading" secondItem="gMF-ZW-Uyj" secondAttribute="trailing" constant="32" id="YLt-6B-zvh"/>
                                         <constraint firstItem="sxU-GZ-i5u" firstAttribute="leading" secondItem="UXS-74-OMe" secondAttribute="trailing" constant="32" id="fQa-7A-1Fw"/>
-                                        <constraint firstAttribute="bottom" secondItem="sxU-GZ-i5u" secondAttribute="bottom" constant="20" symbolic="YES" id="oPm-Ex-T7j"/>
-                                        <constraint firstAttribute="bottom" secondItem="UXS-74-OMe" secondAttribute="bottom" constant="20" symbolic="YES" id="vCJ-uy-43B"/>
+                                        <constraint firstAttribute="bottom" secondItem="sxU-GZ-i5u" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="oPm-Ex-T7j"/>
+                                        <constraint firstAttribute="bottom" secondItem="UXS-74-OMe" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="vCJ-uy-43B"/>
                                         <constraint firstItem="UXS-74-OMe" firstAttribute="top" secondItem="KWO-IK-aCk" secondAttribute="top" constant="20" symbolic="YES" id="vF2-wh-xba"/>
                                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="sxU-GZ-i5u" secondAttribute="trailing" constant="241" id="xdR-dH-qph"/>
                                     </constraints>
