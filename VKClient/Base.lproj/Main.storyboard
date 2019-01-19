@@ -500,11 +500,35 @@
                             <outlet property="delegate" destination="x3C-rJ-xP6" id="EPq-ym-4Ui"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новости" id="Rhp-zB-6zl"/>
+                    <navigationItem key="navigationItem" title="Новости" id="Rhp-zB-6zl">
+                        <barButtonItem key="rightBarButtonItem" title="Advanced News" id="NPO-gy-X5r">
+                            <connections>
+                                <segue destination="lGd-Vi-AEK" kind="show" id="nm0-Lz-fdi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQW-Zh-bwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3880.8000000000002" y="1675.4122938530736"/>
+        </scene>
+        <!--News Advanced Table View Controller-->
+        <scene sceneID="8RN-te-u58">
+            <objects>
+                <tableViewController id="lGd-Vi-AEK" customClass="NewsAdvancedTableViewController" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AQu-oB-r1G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="lGd-Vi-AEK" id="P0m-tn-nMN"/>
+                            <outlet property="delegate" destination="lGd-Vi-AEK" id="IyF-PJ-rFi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ug2-jk-qtw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4700" y="1679"/>
         </scene>
         <!--Новости-->
         <scene sceneID="y1b-er-a3x">

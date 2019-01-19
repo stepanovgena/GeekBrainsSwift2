@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsAdvancedReusableCell" rowHeight="412" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="VKClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="412"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="NewsTableViewCell" customModule="VKClient" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="411.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-bB-6Fz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="320" id="tXp-JN-gmi"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5vs-Qt-chy">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="v0N-Uj-YqE"/>
+                            <outlet property="delegate" destination="-1" id="K4O-De-G9r"/>
+                        </connections>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-LR-V7y" customClass="LikeControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="363" width="60" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="H9H-We-Jqq"/>
+                            <constraint firstAttribute="height" constant="22" id="vJk-MT-wHH"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thg-FJ-6TX" customClass="CommentControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="68" y="363" width="60" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="1I3-0p-IuX"/>
+                            <constraint firstAttribute="width" constant="60" id="qQT-rq-RgH"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-KE-k22" customClass="ShareControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="136" y="363" width="60" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="3fo-4W-ZY6"/>
+                            <constraint firstAttribute="height" constant="22" id="9I5-7p-0g2"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zm-7L-7fl" customClass="ViewsControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="240" y="363" width="80" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="QD2-Is-StM"/>
+                            <constraint firstAttribute="height" constant="22" id="W91-QV-bEA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="8zm-7L-7fl" secondAttribute="bottom" constant="16" id="0m7-Bj-cfd"/>
+                    <constraint firstItem="8mv-LR-V7y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="54l-1v-kJQ"/>
+                    <constraint firstItem="8zm-7L-7fl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xxy-KE-k22" secondAttribute="trailing" constant="8" id="99I-Ac-JvO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="thg-FJ-6TX" secondAttribute="bottom" constant="16" id="Kob-W6-dIe"/>
+                    <constraint firstItem="EdE-bB-6Fz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hkH-Qa-dTA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8mv-LR-V7y" secondAttribute="bottom" constant="16" id="jo9-Ur-rqH"/>
+                    <constraint firstAttribute="trailing" secondItem="8zm-7L-7fl" secondAttribute="trailing" id="lRT-N8-4jV"/>
+                    <constraint firstItem="EdE-bB-6Fz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lTL-b9-pjb"/>
+                    <constraint firstItem="Xxy-KE-k22" firstAttribute="leading" secondItem="thg-FJ-6TX" secondAttribute="trailing" constant="8" id="nfp-o6-EU9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Xxy-KE-k22" secondAttribute="bottom" constant="16" id="sXf-1l-gl1"/>
+                    <constraint firstAttribute="trailing" secondItem="EdE-bB-6Fz" secondAttribute="trailing" id="tws-36-cbp"/>
+                    <constraint firstItem="thg-FJ-6TX" firstAttribute="leading" secondItem="8mv-LR-V7y" secondAttribute="trailing" constant="8" id="wnd-Wq-TW3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsCollectionView" destination="EdE-bB-6Fz" id="Esj-zS-hos"/>
+            </connections>
+            <point key="canvasLocation" x="35.200000000000003" y="160.11994002998503"/>
+        </tableViewCell>
+    </objects>
+</document>
