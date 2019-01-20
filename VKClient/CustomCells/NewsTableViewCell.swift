@@ -9,34 +9,35 @@
 import UIKit
 
 class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
- 
-  @IBOutlet weak var newsCollectionView: UICollectionView!
   
+  @IBOutlet weak var likeControl: LikeControl! {
+    didSet{
+      print("likeControl outlet didSet")
+    }
+  }
+  
+  @IBOutlet weak var newsCollectionView: UICollectionView! {
+    didSet {
+      print ("collectionView outlet didSet")
+      newsCollectionView.dataSource = self
+      newsCollectionView.delegate = self
+      newsCollectionView.register(UINib.init(nibName: "NewsAdvancedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsAdvancedCollectionViewReusableCell")
+      let flowLayout = UICollectionViewFlowLayout()
+      flowLayout.scrollDirection = .horizontal
+      flowLayout.itemSize = CGSize(width: 60, height: 44)
+      flowLayout.minimumLineSpacing = 5
+      flowLayout.minimumInteritemSpacing = 5
+      newsCollectionView.collectionViewLayout = flowLayout
+    }
+  }
   
   override func awakeFromNib() {
         super.awakeFromNib()
     
-    newsCollectionView.dataSource = self
-    newsCollectionView.delegate = self
-    newsCollectionView.register(UINib.init(nibName: "NewsAdvancedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsAdvancedCollectionViewReusableCell")
-//
-//    let flowLayout = UICollectionViewFlowLayout()
-//    flowLayout.scrollDirection = .horizontal
-//    flowLayout.itemSize = CGSize(width: 60, height: 44)
-//    flowLayout.minimumLineSpacing = 5
-//    flowLayout.minimumInteritemSpacing = 5
-//    newsCollectionView.collectionViewLayout = flowLayout
-    
-  
-  
+    //debugging
+    print("tableViewCell awake from nib OK")
+    //likeControl.like()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-  
   
   //Mark: Setup collectionView
   
@@ -45,7 +46,7 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
+    print ("collectionView dequeueReusableCell called")
    let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: "NewsAdvancedCollectionViewReusableCell", for: indexPath) as! NewsAdvancedCollectionViewCell
     return cell
   }

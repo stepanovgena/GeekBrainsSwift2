@@ -31,10 +31,6 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <connections>
-                            <outlet property="dataSource" destination="-1" id="v0N-Uj-YqE"/>
-                            <outlet property="delegate" destination="-1" id="K4O-De-G9r"/>
-                        </connections>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-LR-V7y" customClass="LikeControl" customModule="VKClient" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="363" width="60" height="22"/>
@@ -86,6 +82,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="likeControl" destination="8mv-LR-V7y" id="vB2-bU-QKS"/>
                 <outlet property="newsCollectionView" destination="EdE-bB-6Fz" id="Esj-zS-hos"/>
             </connections>
             <point key="canvasLocation" x="35.200000000000003" y="160.11994002998503"/>

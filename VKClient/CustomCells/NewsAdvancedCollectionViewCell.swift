@@ -17,6 +17,7 @@ class NewsAdvancedCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+      print("collectionView cell awake from nib")
         // Initialization code
     }
 

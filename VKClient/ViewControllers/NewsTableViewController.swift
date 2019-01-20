@@ -19,10 +19,10 @@ class NewsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-    
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//    
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
@@ -31,6 +31,7 @@ class NewsTableViewController: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      print("tableViewCell dequeue")
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCellReuseIdentifier", for: indexPath)
 
         return cell
