@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsOnePicTableViewCellReuseIdentifier" rowHeight="497" id="KGk-i7-Jjw" customClass="NewsOnePicTableViewCell" customModule="VKClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="497"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="496.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsd-uX-di4">
+                        <rect key="frame" x="8" y="0.0" width="334" height="92.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvN-P6-8Z2">
+                        <rect key="frame" x="0.0" y="100.5" width="350" height="350"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="gvN-P6-8Z2" secondAttribute="height" multiplier="1:1" id="5Ur-UD-pUU"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtC-cu-13t" customClass="LikeControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="458.5" width="60" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="PXj-AP-aB0"/>
+                            <constraint firstAttribute="height" constant="22" id="XAz-fT-AeD"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hks-eJ-gFm" customClass="ShareControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="136" y="458.5" width="60" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="MCM-bP-IhZ"/>
+                            <constraint firstAttribute="width" constant="60" id="fQ1-Mh-uqY"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-WP-vy0" customClass="CommentControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="68" y="458.5" width="60" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="jwP-oY-dsW"/>
+                            <constraint firstAttribute="height" constant="22" id="rK7-iE-BPp"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6o-yt-AaY" customClass="ViewsControl" customModule="VKClient" customModuleProvider="target">
+                        <rect key="frame" x="254" y="458.5" width="80" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="2Ek-XU-Qzj"/>
+                            <constraint firstAttribute="width" constant="80" id="KN6-hN-Z1U"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="R6o-yt-AaY" secondAttribute="bottom" constant="16" id="0UB-NJ-L33"/>
+                    <constraint firstItem="gvN-P6-8Z2" firstAttribute="top" secondItem="Bsd-uX-di4" secondAttribute="bottom" constant="8" id="0rN-ws-tX2"/>
+                    <constraint firstItem="MGa-WP-vy0" firstAttribute="leading" secondItem="CtC-cu-13t" secondAttribute="trailing" constant="8" id="8SW-Pj-ZMF"/>
+                    <constraint firstAttribute="trailing" secondItem="gvN-P6-8Z2" secondAttribute="trailing" id="BKJ-hg-sJj"/>
+                    <constraint firstItem="Bsd-uX-di4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="E9y-Cg-h4w"/>
+                    <constraint firstItem="gvN-P6-8Z2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JJ5-aK-lNd"/>
+                    <constraint firstItem="CtC-cu-13t" firstAttribute="top" secondItem="gvN-P6-8Z2" secondAttribute="bottom" constant="8" id="QFd-GO-qVr"/>
+                    <constraint firstAttribute="trailing" secondItem="R6o-yt-AaY" secondAttribute="trailing" constant="16" id="SZ6-So-XSb"/>
+                    <constraint firstItem="Bsd-uX-di4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yl7-jb-hmg"/>
+                    <constraint firstItem="CtC-cu-13t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dfi-Yt-E7O"/>
+                    <constraint firstAttribute="bottom" secondItem="MGa-WP-vy0" secondAttribute="bottom" constant="16" id="eBf-N2-PMn"/>
+                    <constraint firstItem="hks-eJ-gFm" firstAttribute="leading" secondItem="MGa-WP-vy0" secondAttribute="trailing" constant="8" id="gFA-h1-x3F"/>
+                    <constraint firstAttribute="trailing" secondItem="Bsd-uX-di4" secondAttribute="trailing" constant="8" id="l5j-5F-ahf"/>
+                    <constraint firstItem="R6o-yt-AaY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hks-eJ-gFm" secondAttribute="trailing" constant="8" id="mqk-Le-nIP"/>
+                    <constraint firstAttribute="bottom" secondItem="hks-eJ-gFm" secondAttribute="bottom" constant="16" id="res-NA-DzH"/>
+                    <constraint firstAttribute="bottom" secondItem="CtC-cu-13t" secondAttribute="bottom" constant="16" id="vxp-Dc-OUz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsOnePicImageView" destination="gvN-P6-8Z2" id="od3-cH-lrD"/>
+            </connections>
+            <point key="canvasLocation" x="161.59999999999999" y="324.28785607196403"/>
+        </tableViewCell>
+    </objects>
+</document>

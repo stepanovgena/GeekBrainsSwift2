@@ -10,14 +10,11 @@ import UIKit
 
 class NewsAdvancedCollectionViewCell: UICollectionViewCell {
   
-//  class var CustomCell : NewsAdvancedCollectionViewCell {
-//    let cell = Bundle.main.loadNibNamed("NewsAdvancedCollectionViewCell", owner: self, options: nil)?.last
-//    return cell as! NewsAdvancedCollectionViewCell
-//  }
 
+  @IBOutlet weak var newsCollectionImageView: UIImageView!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
-      print("collectionView cell awake from nib")
         // Initialization code
     }
 

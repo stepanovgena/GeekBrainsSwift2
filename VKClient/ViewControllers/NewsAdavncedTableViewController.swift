@@ -9,33 +9,56 @@
 import Foundation
 import UIKit
 
-let simpleCellIdentifier = "newsCellReuseIdentifier"
-let advancedCellIdentifier = "newsAdvancedReusableCell"
-
 class NewsAdvancedTableViewController: UITableViewController {
+  
+  let newsMultiImageCellIdentifier = "newsAdvancedReusableCell"
+  let newsSingleImageCellIdentifier = "newsOnePicTableViewCellReuseIdentifier"
+  var newsToDisplay: [News] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil),
-                       forCellReuseIdentifier: advancedCellIdentifier)
+                       forCellReuseIdentifier: newsMultiImageCellIdentifier)
+    
+    tableView.register(UINib(nibName: "NewsOnePicTableViewCell", bundle: nil),
+                       forCellReuseIdentifier: newsSingleImageCellIdentifier)
+    
+    
+    
     print("tableView didLoad")
+    
+    if let news = ServerEmulator.getNews() {
+      newsToDisplay = news
+
+    }
     
   }
   
   // MARK: - Table view data source
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  
-    return 1
+    return newsToDisplay.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: advancedCellIdentifier, for: indexPath)
     
-    return cell
-  }
-  
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 200
+    var resultCell = UITableViewCell()
+    
+    if let picturesCount = newsToDisplay[indexPath.row].picturesArray?.count {
+    
+    if (picturesCount > 6) {
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: newsMultiImageCellIdentifier, for: indexPath) as! NewsTableViewCell
+      cell.newsPicturesArray = newsToDisplay[indexPath.row].picturesArray ?? []
+    
+      resultCell = cell
+    } else {
+      
+      let cell = tableView.dequeueReusableCell(withIdentifier: newsSingleImageCellIdentifier, for: indexPath) as! NewsOnePicTableViewCell
+      cell.newsOnePicImageView.image = UIImage(named: newsToDisplay[indexPath.row].picturesArray![0])
+      resultCell = cell
+      }
+    }
+    return resultCell
   }
 }

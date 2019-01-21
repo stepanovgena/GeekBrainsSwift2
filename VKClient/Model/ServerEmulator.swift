@@ -45,6 +45,19 @@ class ServerEmulator {
   static var groupsAndroidDev = Groups(name: "iOS Android Dev", avatarPath: "groupsAndroidDevAvatar.png")
   static var groupsDevLibrary = Groups(name: "Библиотека программиста", avatarPath: "groupsDevLibraryAvatar.png")
   
+  //emulating a few news entries
+  static var newsMacOs = News(
+    newsId: "1234",
+    newsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    picturesArray: ["newsSnowLeopard.png", "newsMavericks.png", "newsElcapitan.png", "newsYosemite.png", "newsSierra.png", "newsHighSierra.png", "newsMojave.png"], likesCount: 321, commentsCount: 123, sharesCount: 99, viewsCount: 789)
+  
+  static var newsMacBookOnePic = News(
+    newsId: "1233",
+    newsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    picturesArray: ["newsMacBook.png"], likesCount: 135, commentsCount: 89, sharesCount: 75, viewsCount: 576)
+  
+  
+  
   //set users friends 'database' as a simple dictionary
   static var userFriendsDataBase = ["user001": [
     friendEgor,
@@ -80,6 +93,8 @@ class ServerEmulator {
   //set users groups 'database' as a simple dictionary
   static var availableGroupsDataBase = [groupsGeekBrains, groupsPodlodka, groupsIosDev, groupsIosGoodReads, groupsAndroidDev, groupsDevLibrary]
   
+  static var newsDataBase = [newsMacOs, newsMacBookOnePic]
+  
   
   static func getFriends(userId: String) -> [Friends]? {
      return userFriendsDataBase[userId]
@@ -99,5 +114,9 @@ class ServerEmulator {
   
   static func updateUserGroups(userId: String, updatedGroupsArray: [Groups]) {
     userGroupsDataBase.updateValue(updatedGroupsArray, forKey: userId)
+  }
+  
+  static func getNews() -> [News]? {
+    return newsDataBase
   }
 }

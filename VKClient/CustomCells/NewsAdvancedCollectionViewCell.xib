@@ -19,20 +19,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="106" height="64"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1a-Cv-BTJ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YhD-4m-lzk">
                         <rect key="frame" x="0.0" y="0.0" width="106" height="64"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="h1a-Cv-BTJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="K1o-Ac-C5k"/>
-                <constraint firstAttribute="bottom" secondItem="h1a-Cv-BTJ" secondAttribute="bottom" id="Xoo-rW-PWb"/>
-                <constraint firstItem="h1a-Cv-BTJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="j2P-81-h61"/>
-                <constraint firstAttribute="trailing" secondItem="h1a-Cv-BTJ" secondAttribute="trailing" id="rca-nf-DYu"/>
+                <constraint firstItem="YhD-4m-lzk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AgO-le-wgV"/>
+                <constraint firstItem="YhD-4m-lzk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="B2P-J3-EWk"/>
+                <constraint firstAttribute="trailing" secondItem="YhD-4m-lzk" secondAttribute="trailing" id="CfL-Yq-NnN"/>
+                <constraint firstAttribute="bottom" secondItem="YhD-4m-lzk" secondAttribute="bottom" id="T4f-Kr-xEN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="106" height="64"/>
+            <connections>
+                <outlet property="newsCollectionImageView" destination="YhD-4m-lzk" id="l0E-Dd-Vck"/>
+            </connections>
             <point key="canvasLocation" x="182.40000000000001" y="114.24287856071965"/>
         </collectionViewCell>
     </objects>
