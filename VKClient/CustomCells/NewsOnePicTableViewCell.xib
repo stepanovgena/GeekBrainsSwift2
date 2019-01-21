@@ -32,31 +32,31 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtC-cu-13t" customClass="LikeControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="458.5" width="60" height="22"/>
+                        <rect key="frame" x="0.0" y="458.5" width="70" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="PXj-AP-aB0"/>
+                            <constraint firstAttribute="width" constant="70" id="PXj-AP-aB0"/>
                             <constraint firstAttribute="height" constant="22" id="XAz-fT-AeD"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hks-eJ-gFm" customClass="ShareControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="136" y="458.5" width="60" height="22"/>
+                        <rect key="frame" x="156" y="458.5" width="70" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="MCM-bP-IhZ"/>
-                            <constraint firstAttribute="width" constant="60" id="fQ1-Mh-uqY"/>
+                            <constraint firstAttribute="width" constant="70" id="fQ1-Mh-uqY"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-WP-vy0" customClass="CommentControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="68" y="458.5" width="60" height="22"/>
+                        <rect key="frame" x="78" y="458.5" width="70" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="jwP-oY-dsW"/>
+                            <constraint firstAttribute="width" constant="70" id="jwP-oY-dsW"/>
                             <constraint firstAttribute="height" constant="22" id="rK7-iE-BPp"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6o-yt-AaY" customClass="ViewsControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="254" y="458.5" width="80" height="22"/>
+                        <rect key="frame" x="270" y="458.5" width="80" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="2Ek-XU-Qzj"/>
@@ -72,7 +72,7 @@
                     <constraint firstItem="Bsd-uX-di4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="E9y-Cg-h4w"/>
                     <constraint firstItem="gvN-P6-8Z2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JJ5-aK-lNd"/>
                     <constraint firstItem="CtC-cu-13t" firstAttribute="top" secondItem="gvN-P6-8Z2" secondAttribute="bottom" constant="8" id="QFd-GO-qVr"/>
-                    <constraint firstAttribute="trailing" secondItem="R6o-yt-AaY" secondAttribute="trailing" constant="16" id="SZ6-So-XSb"/>
+                    <constraint firstAttribute="trailing" secondItem="R6o-yt-AaY" secondAttribute="trailing" id="SZ6-So-XSb"/>
                     <constraint firstItem="Bsd-uX-di4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yl7-jb-hmg"/>
                     <constraint firstItem="CtC-cu-13t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dfi-Yt-E7O"/>
                     <constraint firstAttribute="bottom" secondItem="MGa-WP-vy0" secondAttribute="bottom" constant="16" id="eBf-N2-PMn"/>
@@ -85,7 +85,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="comments" destination="MGa-WP-vy0" id="eaC-R7-pLw"/>
+                <outlet property="likes" destination="CtC-cu-13t" id="yUD-mX-cOp"/>
+                <outlet property="newsLabel" destination="Bsd-uX-di4" id="S8D-xg-9uw"/>
                 <outlet property="newsOnePicImageView" destination="gvN-P6-8Z2" id="od3-cH-lrD"/>
+                <outlet property="shares" destination="hks-eJ-gFm" id="3ci-5i-wCQ"/>
+                <outlet property="views" destination="R6o-yt-AaY" id="tmb-Cc-swl"/>
             </connections>
             <point key="canvasLocation" x="161.59999999999999" y="324.28785607196403"/>
         </tableViewCell>

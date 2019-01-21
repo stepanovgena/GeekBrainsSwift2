@@ -17,6 +17,7 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
   @IBOutlet var groupsTableView: UITableView!
   @IBOutlet weak var groupsSearchBar: UISearchBar!
   
+  //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserGroups()

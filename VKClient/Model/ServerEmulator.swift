@@ -48,12 +48,12 @@ class ServerEmulator {
   //emulating a few news entries
   static var newsMacOs = News(
     newsId: "1234",
-    newsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    newsText: "macOS (/ˌmækʔoʊˈɛs/;[8] previously Mac OS X and later OS X, Roman numeral 'X' pronounced 'ten') is a series of graphical operating systems developed and marketed by Apple Inc. since 2001. It is the primary operating system for Apple's Mac family of computers.",
     picturesArray: ["newsSnowLeopard.png", "newsMavericks.png", "newsElcapitan.png", "newsYosemite.png", "newsSierra.png", "newsHighSierra.png", "newsMojave.png"], likesCount: 321, commentsCount: 123, sharesCount: 99, viewsCount: 789)
   
   static var newsMacBookOnePic = News(
     newsId: "1233",
-    newsText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    newsText: "The MacBook Air is a line of Macintosh subnotebook computers developed and manufactured by Apple Inc. It consists of a full-size keyboard, a machined aluminum case, and a thin light structure.",
     picturesArray: ["newsMacBook.png"], likesCount: 135, commentsCount: 89, sharesCount: 75, viewsCount: 576)
   
   

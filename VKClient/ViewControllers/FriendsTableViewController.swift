@@ -78,7 +78,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     hideKeyboard()
   }
-
+  //TODO: Improve search algorithm to look for the first N letters only
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     //keep only names matching searchBar input
     filteredFriendsArray = friendsArray.filter({ (friend) -> Bool in

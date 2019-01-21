@@ -14,8 +14,9 @@ class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
   var filteredAvailableGroupsArray: [Groups] = []
   
   @IBOutlet var availableGroupsTableView: UITableView!
-  
   @IBOutlet weak var allGroupsSearchBar: UISearchBar!
+  
+  //MARK: Lifecycle
   override func viewDidLoad() {
         super.viewDidLoad()
         getAvailableGroups()

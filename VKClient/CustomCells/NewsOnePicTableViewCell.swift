@@ -9,18 +9,20 @@
 import UIKit
 
 class NewsOnePicTableViewCell: UITableViewCell {
-  
+    
+  @IBOutlet weak var newsLabel: UILabel!
   @IBOutlet weak var newsOnePicImageView: UIImageView!
+  @IBOutlet weak var likes: LikeControl!
+  @IBOutlet weak var comments: CommentControl!
+  @IBOutlet weak var shares: ShareControl!
+  @IBOutlet weak var views: ViewsControl!
   
-    override func awakeFromNib() {
+  //MARK: Lifecycle
+  override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }
