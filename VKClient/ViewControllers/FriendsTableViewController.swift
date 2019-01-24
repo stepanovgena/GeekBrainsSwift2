@@ -82,11 +82,12 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     //keep only names matching searchBar input
     filteredFriendsArray = friendsArray.filter({ (friend) -> Bool in
-      friend.name.lowercased().contains(searchText.lowercased())
+      FirstLetterSearch.isMatched(searchBase: friend.name, searchString: searchText)
     })
     //update datasource for tableView
     updateFriendsIndex(friends: filteredFriendsArray)
     updateFriendsNamesDictionary(friends: filteredFriendsArray)
+    print(filteredFriendsArray)
 
     if (searchText.count == 0) {
       //restore initial state of data received from server
@@ -125,8 +126,9 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         if let selection = self.tableView.indexPathForSelectedRow {
           let char = friendsIndex[selection.section]
           if let selectedFriend = friendsIndexDictionary[char]?[selection.row] {
-          let selectedFriendImagePath = selectedFriend.avatarPath
-          destination.friendImageToDisplayPath = selectedFriendImagePath
+            destination.friendToDisplay = selectedFriend
+          //let selectedFriendImagePath = selectedFriend.avatarPath
+         // destination.friendImageToDisplayPath = selectedFriendImagePath
           }
         }
       }

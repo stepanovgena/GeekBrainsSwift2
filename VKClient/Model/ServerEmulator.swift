@@ -87,6 +87,18 @@ class ServerEmulator {
     friendAlisaSelezneva
     ]]
   
+  static var userImagesDataBase = ["Адмирал Акбар": [
+    "picStarWars01.png",
+    "picStarWars02.png",
+    "picStarWars03.png",
+    "picStarWars04.png",
+    "picStarWars05.png",
+    "picStarWars06.png",
+    "picStarWars07.png",
+    ]]
+  
+  
+  
   //set users groups 'database' as a simple dictionary
   static var userGroupsDataBase = ["user001": [groupsGeekBrains, groupsPodlodka, groupsIosDev, groupsIosGoodReads]]
 
@@ -118,5 +130,9 @@ class ServerEmulator {
   
   static func getNews() -> [News]? {
     return newsDataBase
+  }
+  
+  static func getUserImages(userName: String) -> [String] {
+    return userImagesDataBase[userName] ?? []
   }
 }

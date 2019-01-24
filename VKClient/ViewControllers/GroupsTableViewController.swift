@@ -65,7 +65,7 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     //keep only names matching searchBar input
     filteredGroupsArray = groupsArray.filter({ (group) -> Bool in
-      group.name.lowercased().contains(searchText.lowercased())
+      FirstLetterSearch.isMatched(searchBase: group.name, searchString: searchText)
     })
     
     if (searchText.count == 0) {

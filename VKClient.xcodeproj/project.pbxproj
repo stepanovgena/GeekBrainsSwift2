@@ -32,6 +32,9 @@
 		966989ED21E36DBB006795A2 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EC21E36DBB006795A2 /* HeartButton.swift */; };
 		966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989EE21E49FBB006795A2 /* LikeControl.swift */; };
 		966989F421ECC23C006795A2 /* SectionIndexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966989F321ECC23C006795A2 /* SectionIndexManager.swift */; };
+		966C50B321F886FD0088E67D /* FirstLettersSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C50B221F886FD0088E67D /* FirstLettersSearch.swift */; };
+		966C50B521F9A1840088E67D /* ProgressStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C50B421F9A1830088E67D /* ProgressStatusIndicator.swift */; };
+		966C50B721F9DC2D0088E67D /* ImageTapAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966C50B621F9DC2D0088E67D /* ImageTapAnimations.swift */; };
 		96A79FED21D268F600320EAE /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEC21D268F600320EAE /* Friends.swift */; };
 		96A79FEF21D2690800320EAE /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FEE21D2690800320EAE /* Groups.swift */; };
 		96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A79FF021D269AC00320EAE /* ServerEmulator.swift */; };
@@ -96,6 +99,9 @@
 		966989EC21E36DBB006795A2 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		966989EE21E49FBB006795A2 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		966989F321ECC23C006795A2 /* SectionIndexManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexManager.swift; sourceTree = "<group>"; };
+		966C50B221F886FD0088E67D /* FirstLettersSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLettersSearch.swift; sourceTree = "<group>"; };
+		966C50B421F9A1830088E67D /* ProgressStatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStatusIndicator.swift; sourceTree = "<group>"; };
+		966C50B621F9DC2D0088E67D /* ImageTapAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTapAnimations.swift; sourceTree = "<group>"; };
 		96A79FEC21D268F600320EAE /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		96A79FEE21D2690800320EAE /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		96A79FF021D269AC00320EAE /* ServerEmulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEmulator.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			children = (
 				96A79FEB21D268D300320EAE /* Model */,
 				96521D3021C570EA0005B24B /* CustomView */,
+				966C50B821F9DCC70088E67D /* CustomAnimations */,
 				9660330821F0A7EB0011886B /* CustomControls */,
 				966989E721E0E2C4006795A2 /* ViewControllers */,
 				9660331321F377F00011886B /* CustomCells */,
@@ -198,6 +205,7 @@
 			children = (
 				96521D3121C571180005B24B /* CornerRadiusButton.swift */,
 				96A7A00221D3DB2900320EAE /* CircularImageView.swift */,
+				966C50B421F9A1830088E67D /* ProgressStatusIndicator.swift */,
 				966989E821E0EAA9006795A2 /* CircularShadowView.swift */,
 				966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */,
 				966989EC21E36DBB006795A2 /* HeartButton.swift */,
@@ -249,8 +257,17 @@
 			isa = PBXGroup;
 			children = (
 				966989F321ECC23C006795A2 /* SectionIndexManager.swift */,
+				966C50B221F886FD0088E67D /* FirstLettersSearch.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		966C50B821F9DCC70088E67D /* CustomAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				966C50B621F9DC2D0088E67D /* ImageTapAnimations.swift */,
+			);
+			path = CustomAnimations;
 			sourceTree = "<group>";
 		};
 		96A79FEB21D268D300320EAE /* Model */ = {
@@ -409,11 +426,13 @@
 				96A7A00521D401E400320EAE /* AllGroupsTableViewController.swift in Sources */,
 				96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */,
 				96A79FFD21D3AEF300320EAE /* FriendsListCell.swift in Sources */,
+				966C50B721F9DC2D0088E67D /* ImageTapAnimations.swift in Sources */,
 				96521D0421C563BB0005B24B /* VKClient.xcdatamodeld in Sources */,
 				96FE3EAB21D42C6D0072A9D8 /* FriendsCollectionViewController.swift in Sources */,
 				96A79FF121D269AC00320EAE /* ServerEmulator.swift in Sources */,
 				9660330C21F0A85B0011886B /* ShareControl.swift in Sources */,
 				9660331221F376C60011886B /* NewsAdavncedTableViewController.swift in Sources */,
+				966C50B521F9A1840088E67D /* ProgressStatusIndicator.swift in Sources */,
 				9660332021F62C100011886B /* NewsOnePicTableViewCell.swift in Sources */,
 				96A79FFF21D3C47E00320EAE /* GroupsTableViewController.swift in Sources */,
 				9660331A21F397210011886B /* NewsAdvancedCollectionViewCell.swift in Sources */,
@@ -428,6 +447,7 @@
 				966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */,
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
 				96A79FEF21D2690800320EAE /* Groups.swift in Sources */,
+				966C50B321F886FD0088E67D /* FirstLettersSearch.swift in Sources */,
 				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
 				966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */,
 			);

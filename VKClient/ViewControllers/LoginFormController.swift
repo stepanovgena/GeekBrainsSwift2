@@ -14,23 +14,39 @@ final class LoginFormController: UIViewController {
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
+  var timerSeconds = 2
   
   private let hardcodedLogin = ""
   private let hardcodedPassword = ""
   private let userId = "user001"
   
+  //MARK: Lifecycle
   override func viewDidLoad() {
         super.viewDidLoad()
-    
+  
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
-    
     NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
-    
     let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
     scrollView?.addGestureRecognizer(hideKeyboardGesture)
-    
     StorageEmulator.setUserId(userId: userId)
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    //progressStatusIndicator demo
+    view.alpha = 0.5
+
+    let progressStatusIndicator = ProgressStatusIndicator(frame: CGRect(x: 0, y:0, width: view.bounds.width, height: view.bounds.height))
+    view.addSubview(progressStatusIndicator)
+
+      Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        self.timerSeconds -= 1
+        if self.timerSeconds == 0 {
+          timer.invalidate()
+          progressStatusIndicator.removeFromSuperview()
+          self.view.alpha = 1
+        }
+      }
+  }
   
   @objc func keyboardWasShown(notification: Notification) {
     guard
@@ -83,5 +99,9 @@ final class LoginFormController: UIViewController {
     let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
     alert.addAction(action)
     present(alert, animated: true, completion: nil)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  
   }
 }

@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-bB-6Fz">
-                        <rect key="frame" x="0.0" y="69" width="326" height="326"/>
+                        <rect key="frame" x="8" y="69" width="310" height="310"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="EdE-bB-6Fz" secondAttribute="height" multiplier="1:1" id="Ebz-vu-94l"/>
@@ -33,7 +33,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-LR-V7y" customClass="LikeControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="414" width="70" height="22"/>
+                        <rect key="frame" x="8" y="414" width="70" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="H9H-We-Jqq"/>
@@ -41,7 +41,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thg-FJ-6TX" customClass="CommentControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="78" y="414" width="70" height="22"/>
+                        <rect key="frame" x="86" y="414" width="70" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="1I3-0p-IuX"/>
@@ -49,7 +49,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-KE-k22" customClass="ShareControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="156" y="414" width="70" height="22"/>
+                        <rect key="frame" x="164" y="414" width="70" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="3fo-4W-ZY6"/>
@@ -57,7 +57,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zm-7L-7fl" customClass="ViewsControl" customModule="VKClient" customModuleProvider="target">
-                        <rect key="frame" x="246" y="414" width="80" height="22"/>
+                        <rect key="frame" x="238" y="414" width="80" height="22"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="QD2-Is-StM"/>
@@ -74,19 +74,19 @@
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="8zm-7L-7fl" secondAttribute="bottom" constant="16" id="0m7-Bj-cfd"/>
                     <constraint firstItem="95X-LK-rk3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4If-gI-K0s"/>
-                    <constraint firstItem="8mv-LR-V7y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="54l-1v-kJQ"/>
+                    <constraint firstItem="8mv-LR-V7y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="54l-1v-kJQ"/>
                     <constraint firstItem="8mv-LR-V7y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EdE-bB-6Fz" secondAttribute="bottom" constant="8" id="6zY-26-CLW"/>
-                    <constraint firstItem="8zm-7L-7fl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xxy-KE-k22" secondAttribute="trailing" constant="8" id="99I-Ac-JvO"/>
+                    <constraint firstItem="8zm-7L-7fl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xxy-KE-k22" secondAttribute="trailing" constant="2" id="99I-Ac-JvO"/>
                     <constraint firstItem="95X-LK-rk3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="K7K-PE-T5K"/>
                     <constraint firstAttribute="bottomMargin" secondItem="thg-FJ-6TX" secondAttribute="bottom" constant="16" id="Kob-W6-dIe"/>
                     <constraint firstItem="EdE-bB-6Fz" firstAttribute="top" secondItem="95X-LK-rk3" secondAttribute="bottom" constant="8" id="ejT-aU-gRn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="8mv-LR-V7y" secondAttribute="bottom" constant="16" id="jo9-Ur-rqH"/>
-                    <constraint firstAttribute="trailing" secondItem="8zm-7L-7fl" secondAttribute="trailing" id="lRT-N8-4jV"/>
-                    <constraint firstItem="EdE-bB-6Fz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lTL-b9-pjb"/>
+                    <constraint firstAttribute="trailing" secondItem="8zm-7L-7fl" secondAttribute="trailing" constant="8" id="lRT-N8-4jV"/>
+                    <constraint firstItem="EdE-bB-6Fz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="lTL-b9-pjb"/>
                     <constraint firstItem="Xxy-KE-k22" firstAttribute="leading" secondItem="thg-FJ-6TX" secondAttribute="trailing" constant="8" id="nfp-o6-EU9"/>
                     <constraint firstAttribute="trailing" secondItem="95X-LK-rk3" secondAttribute="trailing" constant="8" id="qNu-SF-RZN"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Xxy-KE-k22" secondAttribute="bottom" constant="16" id="sXf-1l-gl1"/>
-                    <constraint firstAttribute="trailing" secondItem="EdE-bB-6Fz" secondAttribute="trailing" id="tws-36-cbp"/>
+                    <constraint firstAttribute="trailing" secondItem="EdE-bB-6Fz" secondAttribute="trailing" constant="8" id="tws-36-cbp"/>
                     <constraint firstItem="thg-FJ-6TX" firstAttribute="leading" secondItem="8mv-LR-V7y" secondAttribute="trailing" constant="8" id="wnd-Wq-TW3"/>
                 </constraints>
             </tableViewCellContentView>
