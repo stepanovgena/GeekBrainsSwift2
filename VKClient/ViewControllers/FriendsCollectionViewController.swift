@@ -9,16 +9,21 @@
 import UIKit
 
 class FriendsCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+  
+  @IBOutlet var friendsImagesCollectionView: UICollectionView!
+  
  
   private let reuseIdentifier = "friendsImageReusableCollectionCell"
   var friendToDisplay: Friends?
   var imagesToDisplay: [String] = []
+  var selectedIndexPath = IndexPath(row: 0, section: 0)
   //var friendImageToDisplayPath = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
       if let friend = friendToDisplay {
         imagesToDisplay = ServerEmulator.getUserImages(userName: friend.name)
+        friendsImagesCollectionView.isUserInteractionEnabled = true
       }
     }
 
@@ -50,23 +55,28 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
       cell.transform = CGAffineTransform(scaleX: 1, y: 1)
       
     }
-    
-//    if (indexPath.row > 1) {
-//    let oldIndexPath = IndexPath(row: indexPath.row - 2, section: 0)
-//      if let oldCell = collectionView.cellForItem(at: oldIndexPath) {
-//      UIView.animate(withDuration: 0.8) {
-//        oldCell.alpha = 0.5
-//        oldCell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-//        }
-//      }
-//    }
   }
+  
   func collectionView(_ collectionView: UICollectionView,
                       didEndDisplaying cell: UICollectionViewCell,
                       forItemAt indexPath: IndexPath) {
     UIView.animate(withDuration: 0.8) {
       cell.alpha = 0
       cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    print("cell selected at \(indexPath)")
+    selectedIndexPath = indexPath
+   performSegue(withIdentifier: "toNaiveFullScreenPresenter", sender: nil)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? NaiveFullScreenPresenter {
+        destination.friendToDisplay = friendToDisplay
+        destination.imagesToDisplay = imagesToDisplay
+        destination.index = selectedIndexPath.row
     }
   }
 }

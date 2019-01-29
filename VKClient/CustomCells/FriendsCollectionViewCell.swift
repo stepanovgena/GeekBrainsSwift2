@@ -14,7 +14,8 @@ class FriendsCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var likeControl: LikeControl!
   
   override func awakeFromNib() {
-    addGestureRecognizer(tapGestureRecognizer)
+    //addGestureRecognizer(tapGestureRecognizer)
+    friendsImageView.contentMode = .scaleAspectFill
   }
   
   lazy var tapGestureRecognizer: UITapGestureRecognizer = {
@@ -27,6 +28,9 @@ class FriendsCollectionViewCell: UICollectionViewCell {
   
   @objc func onTap(_ sender: UIImageView) {
     ImageTapAnimations.animateImageTap(imageView: friendsImageView)
+    
+    
+    
   }
 
 }
