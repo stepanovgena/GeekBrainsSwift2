@@ -15,14 +15,18 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
   var friendToDisplay: Friends?
   var imagesToDisplay: [String] = []
   var indexPathToScrollTo = IndexPath(row:0, section:0)
-  //var friendImageToDisplayPath = ""
+  var newCellIndexPath = IndexPath(row: 0, section: 0)
+  var oldCellIndexPath = IndexPath(row: 0, section: 0)
+  var scrollChangedDirection: Bool = false
   
+  //MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     fullScreenCollectionView.dataSource = self
     fullScreenCollectionView.delegate = self
-    fullScreenCollectionView.backgroundColor = .black
-    print("fullscreencolelctionview did load")
+    
+    setupCollectionViewAppearance()
+    
     if let friend = friendToDisplay {
       imagesToDisplay = ServerEmulator.getUserImages(userName: friend.name)
       fullScreenCollectionView.scrollToItem(at: indexPathToScrollTo, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
@@ -35,55 +39,137 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    print("images to display \(imagesToDisplay) total items: \(imagesToDisplay.count)")
     return imagesToDisplay.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    print("fullscreencell set up")
     let image = UIImage(named: imagesToDisplay[indexPath.row])
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FullScreenCollectionViewCell    // Configure the cell
     cell.friendsImageView.image = image
     return cell
   }
   
-  func collectionView(_ collectionView: UICollectionView,
-                      willDisplay cell: UICollectionViewCell,
-                      forItemAt indexPath: IndexPath) {
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     
+     newCellIndexPath = indexPath
+    
+    print("from cell: \(oldCellIndexPath) to cell: \(newCellIndexPath)")
+    
+    //update new cell index for scroll direction detection
+   
+    
+    //detect scroll direction by indexPath change
+    var scroll = ScrollDirection.right
+  
+    if (newCellIndexPath.row - oldCellIndexPath.row > 0) {
+      scroll = ScrollDirection.right
+    } else if (newCellIndexPath.row - oldCellIndexPath.row < 0) {
+       scroll = ScrollDirection.left
+    }
+    
+//    if (indexPath.row == 0) {
+//      scroll = ScrollDirection.right
+//    } else
+    
+      if (oldCellIndexPath.row == imagesToDisplay.count - 1) {
+      scroll = ScrollDirection.left
+    }
+//      else if (newCellIndexPath.row == oldCellIndexPath.row) {
+//      if (scroll == ScrollDirection.right) {scroll = ScrollDirection.left}
+//      else {scroll = ScrollDirection.right}
+//    }
+    
+    //fade-in new cell
     cell.alpha = 0
     cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-    UIView.animate(withDuration: 0.8) {
+    UIView.animate(withDuration: 1) {
       cell.alpha = 1
       cell.transform = CGAffineTransform(scaleX: 1, y: 1)
       
+      //debug - cell borders ON, uncomment below
+//      cell.layer.borderColor = UIColor.white.cgColor
+//      cell.layer.borderWidth = 5.0
     }
     
+    switch scroll {
+      
+    case .right:
+       print("scroll right")
+    //fade-out old cell
         if (indexPath.row > 0) {
         let oldIndexPath = IndexPath(row: indexPath.row - 1, section: 0)
           if let oldCell = collectionView.cellForItem(at: oldIndexPath) {
           UIView.animate(withDuration: 0.8) {
-           // let tranlsationX = self.view.bounds.width
             oldCell.alpha = 0.5
             oldCell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-//            //oldCell.transform = CGAffineTransform(translationX: -tranlsationX, y: 0)
-//            self.fullScreenCollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
-//            cell.transform = CGAffineTransform(translationX: -tranlsationX/2, y: 0)
-//              self.fullScreenCollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.right, animated: true)
             }
           }
         }
+        
+    case .left:
+       print("scroll left")
+      //fade-out old cell
+      if (indexPath.row < imagesToDisplay.count - 1) {
+      let oldIndexPath = IndexPath(row: indexPath.row + 1, section: 0)
+      if let oldCell = collectionView.cellForItem(at: oldIndexPath) {
+        UIView.animate(withDuration: 0.8) {
+          oldCell.alpha = 0.5
+          oldCell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }
+      }
+     }
+    }
+     oldCellIndexPath = indexPath
   }
-  func collectionView(_ collectionView: UICollectionView,
-                      didEndDisplaying cell: UICollectionViewCell,
-                      forItemAt indexPath: IndexPath) {
-    UIView.animate(withDuration: 0.8) {
-      cell.alpha = 0
-      cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    //update old cell index for scroll direction detection
+   
+  }
+  //leave modal onTap
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.dismiss(animated: true, completion: nil)
+  }
+  //MARK: CollectionView appearance
+  private func setupCollectionViewAppearance() {
+    
+    let width = UIScreen.main.bounds.width
+    let height = UIScreen.main.bounds.height
+    let flowLayout = UICollectionViewFlowLayout()
+    
+    flowLayout.scrollDirection = .horizontal
+   
+    flowLayout.minimumInteritemSpacing = 0
+    flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    
+    if (width < height) {
+       flowLayout.minimumLineSpacing = 0
+      flowLayout.itemSize = CGSize(width: width, height: width)
+      
+    } else {
+       flowLayout.minimumLineSpacing = width/2
+      flowLayout.itemSize = CGSize(width: height, height: height)
+    }
+    
+    fullScreenCollectionView.collectionViewLayout = flowLayout
+    fullScreenCollectionView.backgroundColor = .black
+    fullScreenCollectionView.isPagingEnabled = true
+  }
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    if traitCollection.horizontalSizeClass == .compact {
+      setupCollectionViewAppearance()
+      print("changed to vertical")
+    } else {
+     setupCollectionViewAppearance()
+      print("changed to horizontal")
     }
   }
   
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.dismiss(animated: true, completion: nil)
+}
+
+//MARK: Extensions
+extension FullScreenImagePresenter {
+  enum ScrollDirection {
+    case right
+    case left
   }
 }

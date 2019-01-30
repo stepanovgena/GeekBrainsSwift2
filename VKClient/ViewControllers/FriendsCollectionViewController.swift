@@ -69,14 +69,14 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("cell selected at \(indexPath)")
     selectedIndexPath = indexPath
-   performSegue(withIdentifier: "toNaiveFullScreenPresenter", sender: nil)
+   performSegue(withIdentifier: "toFullScreenGallery", sender: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let destination = segue.destination as? NaiveFullScreenPresenter {
+    if let destination = segue.destination as? FullScreenImagePresenter {
         destination.friendToDisplay = friendToDisplay
         destination.imagesToDisplay = imagesToDisplay
-        destination.index = selectedIndexPath.row
+        destination.indexPathToScrollTo = selectedIndexPath
     }
   }
 }

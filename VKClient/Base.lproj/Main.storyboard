@@ -299,7 +299,7 @@
                     </collectionView>
                     <connections>
                         <outlet property="friendsImagesCollectionView" destination="Wnr-E9-Rmg" id="7h2-Wm-Ait"/>
-                        <segue destination="4kJ-8m-9Wm" kind="presentation" identifier="toNaiveFullScreenPresenter" id="g8p-Nd-oiU"/>
+                        <segue destination="9xk-7x-4ty" kind="presentation" identifier="toFullScreenGallery" id="kYK-bo-Da5"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieg-pb-qNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

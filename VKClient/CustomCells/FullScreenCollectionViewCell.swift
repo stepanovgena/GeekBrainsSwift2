@@ -14,6 +14,7 @@ class FullScreenCollectionViewCell: UICollectionViewCell {
   override func awakeFromNib() {
     //addGestureRecognizer(tapGestureRecognizer)
     friendsImageView.contentMode = .scaleAspectFit
+
   }
   
 }
