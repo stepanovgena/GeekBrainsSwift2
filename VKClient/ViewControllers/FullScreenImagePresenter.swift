@@ -50,14 +50,10 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
   }
   
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    
-     newCellIndexPath = indexPath
-    
-    print("from cell: \(oldCellIndexPath) to cell: \(newCellIndexPath)")
-    
     //update new cell index for scroll direction detection
-   
-    
+     newCellIndexPath = indexPath
+     print("from cell: \(oldCellIndexPath) to cell: \(newCellIndexPath)")
+  
     //detect scroll direction by indexPath change
     var scroll = ScrollDirection.right
   
@@ -67,17 +63,9 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
        scroll = ScrollDirection.left
     }
     
-//    if (indexPath.row == 0) {
-//      scroll = ScrollDirection.right
-//    } else
-    
       if (oldCellIndexPath.row == imagesToDisplay.count - 1) {
       scroll = ScrollDirection.left
     }
-//      else if (newCellIndexPath.row == oldCellIndexPath.row) {
-//      if (scroll == ScrollDirection.right) {scroll = ScrollDirection.left}
-//      else {scroll = ScrollDirection.right}
-//    }
     
     //fade-in new cell
     cell.alpha = 0
