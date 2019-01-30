@@ -29,8 +29,9 @@ final class LoginFormController: UIViewController {
     let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
     scrollView?.addGestureRecognizer(hideKeyboardGesture)
     StorageEmulator.setUserId(userId: userId)
+    
     }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     //progressStatusIndicator demo
     view.alpha = 0.5
@@ -83,15 +84,19 @@ final class LoginFormController: UIViewController {
   }
   
   func checkUserData() -> Bool {
-    let userInputLogin = loginTextField.text
-    let userInputPassword = passwordTextField.text
-    if (userInputLogin == hardcodedLogin && userInputPassword == hardcodedPassword) {
-      print("Auth OK")
-      return true
-    } else {
-      print("Wrong credentials")
-      return false
-    }
+    //uncomment to use auth check
+//    let userInputLogin = loginTextField.text
+//    let userInputPassword = passwordTextField.text
+//    if (userInputLogin == hardcodedLogin && userInputPassword == hardcodedPassword) {
+//      print("Auth OK")
+//      return true
+//    } else {
+//      print("Wrong credentials")
+//      return false
+//    }
+    
+    //delete 'return true' if using auth above
+    return true
   }
   
   func showLoginError() {

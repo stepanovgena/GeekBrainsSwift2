@@ -648,7 +648,7 @@
         <!--Мои друзья-->
         <scene sceneID="yXg-xv-5II">
             <objects>
-                <navigationController title="Мои друзья" automaticallyAdjustsScrollViewInsets="NO" id="uVS-Cq-kYu" sceneMemberID="viewController">
+                <navigationController title="Мои друзья" automaticallyAdjustsScrollViewInsets="NO" id="uVS-Cq-kYu" customClass="CustomNavigationController" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="man-7" id="ZnI-xM-uhN">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>

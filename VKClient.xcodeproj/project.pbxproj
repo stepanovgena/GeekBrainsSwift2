@@ -16,6 +16,10 @@
 		96521D1F21C563C00005B24B /* VKClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D1E21C563C00005B24B /* VKClientUITests.swift */; };
 		96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D2E21C56C4C0005B24B /* LoginFormController.swift */; };
 		96521D3221C571180005B24B /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96521D3121C571180005B24B /* CornerRadiusButton.swift */; };
+		9655F47522022D2800B8F91C /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655F47422022D2800B8F91C /* CustomPushAnimator.swift */; };
+		9655F4772202313600B8F91C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655F4762202313600B8F91C /* CustomNavigationController.swift */; };
+		9655F4792202367800B8F91C /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655F4782202367800B8F91C /* CustomPopAnimator.swift */; };
+		9655F47B220239DE00B8F91C /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655F47A220239DE00B8F91C /* CustomInteractiveTransition.swift */; };
 		9660330A21F0A84B0011886B /* CommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330921F0A84B0011886B /* CommentControl.swift */; };
 		9660330C21F0A85B0011886B /* ShareControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330B21F0A85B0011886B /* ShareControl.swift */; };
 		9660331021F0C77C0011886B /* ViewsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660330F21F0C77C0011886B /* ViewsControl.swift */; };
@@ -86,6 +90,10 @@
 		96521D2021C563C00005B24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96521D2E21C56C4C0005B24B /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		96521D3121C571180005B24B /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		9655F47422022D2800B8F91C /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
+		9655F4762202313600B8F91C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		9655F4782202367800B8F91C /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
+		9655F47A220239DE00B8F91C /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
 		9660330921F0A84B0011886B /* CommentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentControl.swift; sourceTree = "<group>"; };
 		9660330B21F0A85B0011886B /* ShareControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareControl.swift; sourceTree = "<group>"; };
 		9660330F21F0C77C0011886B /* ViewsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsControl.swift; sourceTree = "<group>"; };
@@ -174,6 +182,7 @@
 				96A79FEB21D268D300320EAE /* Model */,
 				96521D3021C570EA0005B24B /* CustomView */,
 				966C50B821F9DCC70088E67D /* CustomAnimations */,
+				9655F47322022CEA00B8F91C /* Custom Transitions */,
 				9660330821F0A7EB0011886B /* CustomControls */,
 				966989E721E0E2C4006795A2 /* ViewControllers */,
 				9660331321F377F00011886B /* CustomCells */,
@@ -217,6 +226,17 @@
 				966989EC21E36DBB006795A2 /* HeartButton.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		9655F47322022CEA00B8F91C /* Custom Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				9655F4762202313600B8F91C /* CustomNavigationController.swift */,
+				9655F47422022D2800B8F91C /* CustomPushAnimator.swift */,
+				9655F4782202367800B8F91C /* CustomPopAnimator.swift */,
+				9655F47A220239DE00B8F91C /* CustomInteractiveTransition.swift */,
+			);
+			path = "Custom Transitions";
 			sourceTree = "<group>";
 		};
 		9660330821F0A7EB0011886B /* CustomControls */ = {
@@ -434,6 +454,7 @@
 				96B5677B21D4301A00DC82DA /* FriendsCollectionViewCell.swift in Sources */,
 				966C50BC21FE036E0088E67D /* FullScreenCollectionViewCell.swift in Sources */,
 				96A7A00521D401E400320EAE /* AllGroupsTableViewController.swift in Sources */,
+				9655F47B220239DE00B8F91C /* CustomInteractiveTransition.swift in Sources */,
 				96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */,
 				96A79FFD21D3AEF300320EAE /* FriendsListCell.swift in Sources */,
 				966C50B721F9DC2D0088E67D /* ImageTapAnimations.swift in Sources */,
@@ -449,18 +470,21 @@
 				9660331A21F397210011886B /* NewsAdvancedCollectionViewCell.swift in Sources */,
 				96A79FF921D39D9900320EAE /* FriendsTableViewController.swift in Sources */,
 				966989EB21E36CCD006795A2 /* CustomViewExtensions.swift in Sources */,
+				9655F47522022D2800B8F91C /* CustomPushAnimator.swift in Sources */,
 				9660331D21F620AF0011886B /* News.swift in Sources */,
 				96A79FF721D3785800320EAE /* StorageEmulator.swift in Sources */,
 				966C50BA21FDF8DD0088E67D /* FullScreenImagePresenter.swift in Sources */,
 				96A7A00321D3DB2900320EAE /* CircularImageView.swift in Sources */,
 				96A79FED21D268F600320EAE /* Friends.swift in Sources */,
 				966989ED21E36DBB006795A2 /* HeartButton.swift in Sources */,
+				9655F4792202367800B8F91C /* CustomPopAnimator.swift in Sources */,
 				9660331621F3785C0011886B /* NewsTableViewCell.swift in Sources */,
 				966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */,
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
 				96A79FEF21D2690800320EAE /* Groups.swift in Sources */,
 				966C50B321F886FD0088E67D /* FirstLettersSearch.swift in Sources */,
 				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
+				9655F4772202313600B8F91C /* CustomNavigationController.swift in Sources */,
 				966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
