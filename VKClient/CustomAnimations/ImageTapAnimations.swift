@@ -6,7 +6,6 @@
 //  Copyright © 2019 Gennady Stepanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 class ImageTapAnimations {
   

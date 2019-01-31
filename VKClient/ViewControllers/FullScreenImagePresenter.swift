@@ -30,6 +30,12 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
     if let friend = friendToDisplay {
       imagesToDisplay = ServerEmulator.getUserImages(userName: friend.name)
       fullScreenCollectionView.scrollToItem(at: indexPathToScrollTo, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
+      
+      let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipedToDismiss))
+      
+      swipeDown.delegate = self
+      //swipeDown.delegate = fullScreenCollectionView as? UIGestureRecognizerDelegate
+      view.addGestureRecognizer(swipeDown)
     }
   }
   
@@ -52,7 +58,7 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     //update new cell index for scroll direction detection
      newCellIndexPath = indexPath
-     print("from cell: \(oldCellIndexPath) to cell: \(newCellIndexPath)")
+    //print("from cell: \(oldCellIndexPath) to cell: \(newCellIndexPath)")
   
     //detect scroll direction by indexPath change
     var scroll = ScrollDirection.right
@@ -82,7 +88,8 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
     switch scroll {
       
     case .right:
-       print("scroll right")
+       //print("scroll right")
+       
     //fade-out old cell
         if (indexPath.row > 0) {
         let oldIndexPath = IndexPath(row: indexPath.row - 1, section: 0)
@@ -95,7 +102,8 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
         }
         
     case .left:
-       print("scroll left")
+       //print("scroll left")
+      
       //fade-out old cell
       if (indexPath.row < imagesToDisplay.count - 1) {
       let oldIndexPath = IndexPath(row: indexPath.row + 1, section: 0)
@@ -109,13 +117,22 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
     }
      oldCellIndexPath = indexPath
   }
-  func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    //update old cell index for scroll direction detection
-   
-  }
+
   //leave modal onTap
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.dismiss(animated: true, completion: nil)
+    
+    if let cell = collectionView.cellForItem(at: indexPath) {
+    
+    UIView.animate(withDuration: 0.5,
+                   animations: {
+                    cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                    cell.alpha = 0
+    },
+                   completion: { _ in
+                    self.dismiss(animated: true, completion: nil)
+    })
+    
+    }
   }
   //MARK: CollectionView appearance
   private func setupCollectionViewAppearance() {
@@ -152,6 +169,21 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
     }
   }
   
+  @objc func swipedToDismiss() {
+    if let cell = fullScreenCollectionView.cellForItem(at: newCellIndexPath) {
+      print("swiped down to dismiss")
+      UIView.animate(withDuration: 0.5,
+                     animations: {
+                      cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                      cell.alpha = 0
+      },
+                     completion: { _ in
+                      self.dismiss(animated: true, completion: nil)
+      })
+      
+    }
+  }
+  
 }
 
 //MARK: Extensions
@@ -159,5 +191,11 @@ extension FullScreenImagePresenter {
   enum ScrollDirection {
     case right
     case left
+  }
+}
+
+extension FullScreenImagePresenter: UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
   }
 }

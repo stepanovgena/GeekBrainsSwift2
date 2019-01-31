@@ -12,12 +12,13 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
   
   @IBOutlet var friendsImagesCollectionView: UICollectionView!
   
- 
   private let reuseIdentifier = "friendsImageReusableCollectionCell"
   var friendToDisplay: Friends?
   var imagesToDisplay: [String] = []
   var selectedIndexPath = IndexPath(row: 0, section: 0)
-  //var friendImageToDisplayPath = ""
+  let presentTransition = CustomPresentModalAnimator()
+  let dismissTransition = CustomDismissModalAnimator()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,19 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("cell selected at \(indexPath)")
     selectedIndexPath = indexPath
-   performSegue(withIdentifier: "toFullScreenGallery", sender: nil)
+    let fullScreenGallery = storyboard!.instantiateViewController(withIdentifier: "FullScreenImagePresenter") as! FullScreenImagePresenter
+    
+    fullScreenGallery.transitioningDelegate = self
+    
+    fullScreenGallery.friendToDisplay = friendToDisplay
+    fullScreenGallery.imagesToDisplay = imagesToDisplay
+    fullScreenGallery.indexPathToScrollTo = selectedIndexPath
+    
+    present(fullScreenGallery, animated: true, completion: nil )
+    
+    
+    
+   //performSegue(withIdentifier: "toFullScreenGallery", sender: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,5 +91,15 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
         destination.imagesToDisplay = imagesToDisplay
         destination.indexPathToScrollTo = selectedIndexPath
     }
+  }
+}
+
+extension FriendsCollectionViewController: UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return presentTransition
+  }
+  
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return dismissTransition
   }
 }

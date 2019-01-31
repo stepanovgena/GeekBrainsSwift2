@@ -54,6 +54,8 @@
 		96A7A00321D3DB2900320EAE /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7A00221D3DB2900320EAE /* CircularImageView.swift */; };
 		96A7A00521D401E400320EAE /* AllGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A7A00421D401E400320EAE /* AllGroupsTableViewController.swift */; };
 		96B5677B21D4301A00DC82DA /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */; };
+		96BC4E332202F39900C1B5BD /* CustomPresentModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC4E322202F39900C1B5BD /* CustomPresentModalAnimator.swift */; };
+		96C6E801220301C200503C6F /* CustomDismissModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6E800220301C200503C6F /* CustomDismissModalAnimator.swift */; };
 		96FE3EAB21D42C6D0072A9D8 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE3EAA21D42C6D0072A9D8 /* FriendsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 		96A7A00221D3DB2900320EAE /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		96A7A00421D401E400320EAE /* AllGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableViewController.swift; sourceTree = "<group>"; };
 		96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		96BC4E322202F39900C1B5BD /* CustomPresentModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentModalAnimator.swift; sourceTree = "<group>"; };
+		96C6E800220301C200503C6F /* CustomDismissModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDismissModalAnimator.swift; sourceTree = "<group>"; };
 		96FE3EAA21D42C6D0072A9D8 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +239,8 @@
 				9655F47422022D2800B8F91C /* CustomPushAnimator.swift */,
 				9655F4782202367800B8F91C /* CustomPopAnimator.swift */,
 				9655F47A220239DE00B8F91C /* CustomInteractiveTransition.swift */,
+				96BC4E322202F39900C1B5BD /* CustomPresentModalAnimator.swift */,
+				96C6E800220301C200503C6F /* CustomDismissModalAnimator.swift */,
 			);
 			path = "Custom Transitions";
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				966C50BC21FE036E0088E67D /* FullScreenCollectionViewCell.swift in Sources */,
 				96A7A00521D401E400320EAE /* AllGroupsTableViewController.swift in Sources */,
 				9655F47B220239DE00B8F91C /* CustomInteractiveTransition.swift in Sources */,
+				96BC4E332202F39900C1B5BD /* CustomPresentModalAnimator.swift in Sources */,
 				96521D2F21C56C4C0005B24B /* LoginFormController.swift in Sources */,
 				96A79FFD21D3AEF300320EAE /* FriendsListCell.swift in Sources */,
 				966C50B721F9DC2D0088E67D /* ImageTapAnimations.swift in Sources */,
@@ -482,6 +489,7 @@
 				966989EF21E49FBB006795A2 /* LikeControl.swift in Sources */,
 				96521CFC21C563BB0005B24B /* AppDelegate.swift in Sources */,
 				96A79FEF21D2690800320EAE /* Groups.swift in Sources */,
+				96C6E801220301C200503C6F /* CustomDismissModalAnimator.swift in Sources */,
 				966C50B321F886FD0088E67D /* FirstLettersSearch.swift in Sources */,
 				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
 				9655F4772202313600B8F91C /* CustomNavigationController.swift in Sources */,
