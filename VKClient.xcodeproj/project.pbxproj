@@ -56,6 +56,7 @@
 		96B5677B21D4301A00DC82DA /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */; };
 		96BC4E332202F39900C1B5BD /* CustomPresentModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC4E322202F39900C1B5BD /* CustomPresentModalAnimator.swift */; };
 		96C6E801220301C200503C6F /* CustomDismissModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6E800220301C200503C6F /* CustomDismissModalAnimator.swift */; };
+		96C6E803220346A300503C6F /* CircleProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6E802220346A300503C6F /* CircleProgressIndicator.swift */; };
 		96FE3EAB21D42C6D0072A9D8 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FE3EAA21D42C6D0072A9D8 /* FriendsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		96B5677A21D4301A00DC82DA /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		96BC4E322202F39900C1B5BD /* CustomPresentModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentModalAnimator.swift; sourceTree = "<group>"; };
 		96C6E800220301C200503C6F /* CustomDismissModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDismissModalAnimator.swift; sourceTree = "<group>"; };
+		96C6E802220346A300503C6F /* CircleProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressIndicator.swift; sourceTree = "<group>"; };
 		96FE3EAA21D42C6D0072A9D8 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +230,7 @@
 				966989E821E0EAA9006795A2 /* CircularShadowView.swift */,
 				966989EA21E36CCD006795A2 /* CustomViewExtensions.swift */,
 				966989EC21E36DBB006795A2 /* HeartButton.swift */,
+				96C6E802220346A300503C6F /* CircleProgressIndicator.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				966C50B321F886FD0088E67D /* FirstLettersSearch.swift in Sources */,
 				96A79FF321D26A0B00320EAE /* NetworkClient.swift in Sources */,
 				9655F4772202313600B8F91C /* CustomNavigationController.swift in Sources */,
+				96C6E803220346A300503C6F /* CircleProgressIndicator.swift in Sources */,
 				966989E921E0EAA9006795A2 /* CircularShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

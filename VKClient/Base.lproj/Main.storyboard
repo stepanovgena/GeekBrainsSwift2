@@ -85,9 +85,18 @@
                                             <segue destination="EEr-Aa-3nL" kind="show" identifier="authOkSegue" id="ewe-74-tWg"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYM-wj-xiv" customClass="CircleProgressIndicator" customModule="VKClient" customModuleProvider="target">
+                                        <rect key="frame" x="172.5" y="468" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="WBH-EW-L4g"/>
+                                            <constraint firstAttribute="width" constant="30" id="WLl-fa-vBx"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="bYM-wj-xiv" firstAttribute="top" secondItem="CDs-wl-F53" secondAttribute="bottom" constant="55" id="2OU-3c-ttp"/>
                                     <constraint firstItem="CDs-wl-F53" firstAttribute="centerX" secondItem="8b3-iq-wF5" secondAttribute="centerX" id="2fg-oV-k95"/>
                                     <constraint firstItem="CDs-wl-F53" firstAttribute="top" secondItem="a7B-Pw-Exr" secondAttribute="bottom" constant="16" id="2g5-tQ-6hx"/>
                                     <constraint firstItem="qry-No-LVr" firstAttribute="leading" secondItem="8b3-iq-wF5" secondAttribute="leading" id="6ed-OS-ZwG"/>
@@ -107,6 +116,7 @@
                                     <constraint firstItem="a7B-Pw-Exr" firstAttribute="top" secondItem="eEb-60-vmE" secondAttribute="bottom" constant="16" id="jQb-Li-44I"/>
                                     <constraint firstItem="a7B-Pw-Exr" firstAttribute="leading" secondItem="8b3-iq-wF5" secondAttribute="leading" constant="75" id="oK6-Um-CCc"/>
                                     <constraint firstAttribute="bottom" secondItem="qry-No-LVr" secondAttribute="bottom" id="pYu-sx-jSv"/>
+                                    <constraint firstItem="bYM-wj-xiv" firstAttribute="centerX" secondItem="8b3-iq-wF5" secondAttribute="centerX" id="r44-XD-jwh"/>
                                     <constraint firstAttribute="trailing" secondItem="LYa-z3-ufn" secondAttribute="trailing" constant="75" id="rim-U9-Of3"/>
                                 </constraints>
                             </scrollView>
@@ -141,12 +151,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="pHB-OZ-gqp">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="pHB-OZ-gqp">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vhQ-Z3-5xO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
                                         <outlet property="delegate" destination="8av-5f-0G4" id="cBz-cF-Mv3"/>
@@ -263,8 +273,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x93-sR-3iE">
-                                            <rect key="frame" x="8" y="8" width="359" height="304"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x93-sR-3iE">
+                                            <rect key="frame" x="8" y="8" width="359" height="356.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="x93-sR-3iE" secondAttribute="height" multiplier="151:150" id="Y3M-ok-DUo"/>
                                             </constraints>
@@ -409,12 +419,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="es3-2r-1DK">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="es3-2r-1DK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-Pb-eC2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
                                         <outlet property="delegate" destination="Iy9-Ka-KH3" id="Nco-AN-YxW"/>
@@ -554,12 +564,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Kb7-uG-3r5">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Kb7-uG-3r5">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-rI-GY3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
                                         <outlet property="delegate" destination="Aaw-O6-zho" id="JVs-1I-tMx"/>

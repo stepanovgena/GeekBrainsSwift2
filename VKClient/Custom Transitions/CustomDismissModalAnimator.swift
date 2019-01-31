@@ -22,7 +22,7 @@ final class CustomDismissModalAnimator: NSObject, UIViewControllerAnimatedTransi
     
     let containerView = transitionContext.containerView
     
-    let fromView = transitionContext.view(forKey: .from)!
+    //let fromView = transitionContext.view(forKey: .from)!
     let toView = transitionContext.view(forKey: .to)!
     
     containerView.addSubview(toView)

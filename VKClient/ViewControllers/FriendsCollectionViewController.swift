@@ -68,7 +68,6 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("cell selected at \(indexPath)")
     selectedIndexPath = indexPath
     let fullScreenGallery = storyboard!.instantiateViewController(withIdentifier: "FullScreenImagePresenter") as! FullScreenImagePresenter
     
@@ -79,10 +78,6 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDelegat
     fullScreenGallery.indexPathToScrollTo = selectedIndexPath
     
     present(fullScreenGallery, animated: true, completion: nil )
-    
-    
-    
-   //performSegue(withIdentifier: "toFullScreenGallery", sender: nil)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

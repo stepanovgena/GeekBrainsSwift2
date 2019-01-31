@@ -162,10 +162,8 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     if traitCollection.horizontalSizeClass == .compact {
       setupCollectionViewAppearance()
-      print("changed to vertical")
     } else {
      setupCollectionViewAppearance()
-      print("changed to horizontal")
     }
   }
   
