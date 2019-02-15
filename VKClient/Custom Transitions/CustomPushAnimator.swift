@@ -55,6 +55,10 @@ final class CustomPushAnimator: NSObject, UIViewControllerAnimatedTransitioning 
       if finished && !transitionContext.transitionWasCancelled {
          source.view.transform = .identity
       }
+      if transitionContext.transitionWasCancelled {
+        destination.view.transform = .identity
+        source.view.transform = .identity
+      }
       transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
     }
   }
